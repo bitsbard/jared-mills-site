@@ -166,7 +166,7 @@ const HomePage: React.FC = () => {
               description="Full-stack AI solution development with state-of-the-art models and technologies."
               features={[
                 "Image, video, or audio generative models",
-                "RAG system implementation",
+                "RAG or LLM system implementation",
                 "Full-stack integration",
                 "Deployment & monitoring"
               ]}
