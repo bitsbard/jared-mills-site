@@ -130,7 +130,7 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hey I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
+              Hi I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
             </p>
             <Link 
               href="https://x.com/stuartxmills" 
