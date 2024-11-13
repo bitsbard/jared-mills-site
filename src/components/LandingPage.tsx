@@ -82,13 +82,13 @@ const LandingPage = () => {
               title="Oshorts"
               description="AI-powered platform for creating faceless social media videos"
               imageUrl="/project1.png"
-              projectUrl="#"
+              projectUrl="https://oshorts-test.vercel.app/?ref=algorism"
             />
             <ProjectCard
               title="Thank John"
               description="AI tool directory platform with semantic search"
               imageUrl="/project2.png"
-              projectUrl="#"
+              projectUrl="https://www.thankjohn.com/?ref=algorism"
             />
           </div>
 
@@ -119,7 +119,7 @@ const LandingPage = () => {
               className="object-contain"
             />
             <p className="text-white text-center md:text-left">
-              Transform your idea into an AI app in weeks.
+              <strong>Transform your idea into an AI app in weeks.</strong>
             </p>
           </div>
           <p className="text-center text-gray-400">
