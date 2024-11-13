@@ -7,8 +7,7 @@ import {
   Zap, 
   Users, 
   Search,
-  Check,
-  ArrowRight
+  Check
 } from 'lucide-react';
 import React from 'react';
 
@@ -132,13 +131,12 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hey, I'm Stuart. With over a decade of experience in AI and machine learning,
-              I've witnessed the transformative power of artificial intelligence firsthand.
-              I've built and deployed numerous successful AI products, and now I want to help
+              Hey, I&apos;m Stuart. With years of experience in AI and machine learning,
+              I&apos;ve witnessed the transformative power of artificial intelligence firsthand.
+              I&apos;ve built and deployed numerous successful AI products, and now I want to help
               <strong className="text-white"> you</strong>. At <strong className="text-white">Algorism</strong>,
               our mission is to help visionary businesses harness the power of generative AI.
-              You have the industry expertise; we have the AI engineering prowess to turn your
-              vision into reality.
+              If you have a vision, we have the skills to turn your vision into reality.
             </p>
             <Link 
               href="https://x.com/stuartxmills" 
