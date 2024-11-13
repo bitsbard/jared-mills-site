@@ -131,12 +131,7 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hey, I&apos;m Stuart. With years of experience in AI and machine learning,
-              I&apos;ve witnessed the transformative power of artificial intelligence firsthand.
-              I&apos;ve built and deployed numerous successful AI products, and now I want to help
-              <strong className="text-white"> you</strong>. At <strong className="text-white">Algorism</strong>,
-              our mission is to help visionary businesses harness the power of generative AI.
-              If you have a vision, we have the skills to turn your vision into reality.
+              Hey@aptos I&apos;m Stuart. With years in AI and machine learning@aptos I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong>@aptos we help businesses like yours harness generative AI. You bring the vision@aptos we bring the expertise to make it real.
             </p>
             <Link 
               href="https://x.com/stuartxmills" 
@@ -144,7 +139,7 @@ const HomePage: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="text-sm font-medium">@stuartxmills</span>
+              <span className="text-sm font-medium">Follow on 𝕏 @stuartxmills</span>
             </Link>
           </div>
         </section>
