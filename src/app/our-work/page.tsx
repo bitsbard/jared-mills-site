@@ -1,3 +1,6 @@
+// src/app/our-work/page.tsx
+'use client'; // Add this at the top since we're using client-side features
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -32,7 +35,7 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
   );
 };
 
-const OurWorkPage = () => {
+export default function OurWorkPage() {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Full-screen Background */}
@@ -46,7 +49,7 @@ const OurWorkPage = () => {
         />
       </div>
 
-      {/* Header positioned at top */}
+      {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
@@ -68,7 +71,7 @@ const OurWorkPage = () => {
         </nav>
       </header>
 
-      {/* Main content without solid background */}
+      {/* Main content */}
       <main className="relative z-10 mt-16">
         <section className="max-w-4xl mx-auto px-4 py-16 text-left">
           <div className="mb-16">
@@ -107,7 +110,7 @@ const OurWorkPage = () => {
         </section>
       </main>
 
-      {/* Transparent Footer */}
+      {/* Footer */}
       <footer className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
@@ -129,6 +132,4 @@ const OurWorkPage = () => {
       </footer>
     </div>
   );
-};
-
-export default OurWorkPage;
+}
