@@ -15,14 +15,16 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Background */}
-      <div className="fixed top-0 left-0 w-full h-full">
-        <Image
-          src="/algorism_background.jpg"
-          alt="Neural Network Background"
-          layout="fill"
-          className="object-cover z-0 opacity-80"
-          priority
-        />
+      <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
+        <div className="hidden md:block w-full h-full">
+          <Image
+            src="/algorism_background.jpg"
+            alt="Neural Network Background"
+            layout="fill"
+            className="object-cover z-0 opacity-80"
+            priority
+          />
+        </div>
       </div>
 
       {/* Header */}
@@ -138,9 +140,9 @@ const HomePage: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <span className="text-sm font-medium">
-              Follow on 𝕏<span className="ml-2">@stuartxmills</span>
-            </span>
+              <span className="text-sm font-medium">
+                Follow on 𝕏<span className="ml-2">@stuartxmills</span>
+              </span>
             </Link>
           </div>
         </section>

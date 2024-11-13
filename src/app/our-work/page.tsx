@@ -36,9 +36,9 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 
 export default function OurWorkPage() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden">
-      {/* Full-screen Background */}
-      <div className="fixed top-0 left-0 w-full h-full">
+    <div className="min-h-screen text-white overflow-x-hidden bg-black">
+      {/* Full-screen Background - Hidden on mobile */}
+      <div className="fixed top-0 left-0 w-full h-full hidden md:block">
         <Image
           src="/algorism_background.jpg"
           alt="Algorism Background"
