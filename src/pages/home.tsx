@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
         </section>
 
         <section className="max-w-4xl mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Our Process - It's Simple!</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Our Process - It&apos;s Simple!</h2>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <ProcessStep number={1} title="Specification" description="We discuss your idea and create a detailed specification." />
             <ProcessStep number={2} title="Development" description="Watch your MVP take shape with regular updates." />
