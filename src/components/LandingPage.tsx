@@ -119,7 +119,7 @@ const LandingPage = () => {
               className="object-contain"
             />
             <p className="text-white text-center md:text-left">
-              <strong>Transform your idea into an AI app in weeks.</strong>
+              <strong>Transform your idea into an AI app in weeks</strong>
             </p>
           </div>
           <p className="text-center text-gray-400">
