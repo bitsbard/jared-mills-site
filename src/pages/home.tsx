@@ -65,7 +65,7 @@ const HomePage: React.FC = () => {
             <FeatureCard 
               icon={<Brain />} 
               title="AI-First Development" 
-              description="Custom AI image, video, audio, and text systems tailored to your needs" 
+              description="Custom AI image, video, audio, and text systems tailored to your businesses needs" 
             />
             <FeatureCard 
               icon={<Rocket />} 
