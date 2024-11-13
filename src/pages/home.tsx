@@ -139,7 +139,9 @@ const HomePage: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="text-sm font-medium">Follow on 𝕏  @stuartxmills</span>
+            <span className="text-sm font-medium">
+              Follow on 𝕏<span className="ml-1">@stuartxmills</span>
+            </span>
             </Link>
           </div>
         </section>
