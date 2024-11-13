@@ -11,7 +11,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardProps) => {
   return (
     <div
-      className="relative rounded-lg overflow-hidden border border-gray-800 transition-transform duration-300 hover:-translate-y-2 bg-black"
+      className="relative rounded-lg overflow-hidden border border-gray-800 bg-black transition-transform duration-300 hover:-translate-y-2"
       style={{ borderWidth: '2px' }}
     >
       <Link href={projectUrl} className="block">
@@ -24,7 +24,7 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
           />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-white mb-2 bg-black px-2 py-1">{title}</h3>
+          <h3 className="text-xl font-semibold text-white mb-2 px-2 py-1">{title}</h3>
           <p className="text-gray-400">{description}</p>
         </div>
       </Link>
@@ -46,7 +46,7 @@ const LandingPage = () => {
         />
       </div>
 
-      {/* Header at top of the viewport */}
+      {/* Header positioned at top */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
@@ -68,15 +68,15 @@ const LandingPage = () => {
         </nav>
       </header>
 
-      {/* Main content */}
+      {/* Main content without solid background */}
       <main className="relative z-10 mt-16">
-        <section className="max-w-4xl mx-auto px-4 py-16 text-left bg-black">
+        <section className="max-w-4xl mx-auto px-4 py-16 text-left">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
 
-          {/* Displaying each project in a single column (one per row) */}
+          {/* Project Cards */}
           <div className="grid grid-cols-1 gap-8 mb-16">
             <ProjectCard
               title="Project Alpha"
@@ -107,7 +107,7 @@ const LandingPage = () => {
         </section>
       </main>
 
-      {/* Footer below main content */}
+      {/* Footer */}
       <footer className="bg-black py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
