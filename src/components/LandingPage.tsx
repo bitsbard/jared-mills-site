@@ -11,8 +11,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardProps) => {
   return (
     <div
-      className="relative rounded-lg overflow-hidden border border-gray-400 transition-transform duration-300 hover:-translate-y-2"
-      // Border style and width
+      className="relative rounded-lg overflow-hidden border border-gray-800 transition-transform duration-300 hover:-translate-y-2"
       style={{ borderWidth: '2px' }}
     >
       <Link href={projectUrl} className="block">
@@ -36,17 +35,25 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 const LandingPage = () => {
   return (
     <div className="min-h-screen text-white relative">
-      {/* Full-page background image */}
-      <Image
-        src="/algorism_background.jpg"
-        alt="Algorism Background"
-        fill
-        className="object-cover z-0"
-        priority
-        style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
-      />
+      {/* Limited background image only for the main content */}
+      <div className="relative">
+        <Image
+          src="/algorism_background.jpg"
+          alt="Algorism Background"
+          fill
+          className="object-cover z-0"
+          priority
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+          }}
+        />
+      </div>
 
-      {/* Page content without background overlay */}
+      {/* Header and main content within the transparent container */}
       <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
@@ -62,7 +69,6 @@ const LandingPage = () => {
           <Link href="/" className="text-white hover:font-bold transition-all">
             Our Work
           </Link>
-          {/* Updated link for "Talk With Us" to direct to "Book a Call" page */}
           <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
             Talk With Us
           </Link>
@@ -71,13 +77,12 @@ const LandingPage = () => {
 
       <main className="relative z-10">
         <section className="max-w-4xl mx-auto px-4 py-16 text-left">
-          {/* Centered container with left-aligned text */}
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
 
-          {/* Displaying each project in a single column (one per row) */}
+          {/* Displaying each project in a single column */}
           <div className="grid grid-cols-1 gap-8 mb-16">
             <ProjectCard
               title="Project Alpha"
@@ -108,7 +113,7 @@ const LandingPage = () => {
         </section>
       </main>
 
-      {/* Footer with solid black background */}
+      {/* Solid black footer without overlay */}
       <footer className="bg-black py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
@@ -123,7 +128,7 @@ const LandingPage = () => {
               Transform your idea into a market-ready Gen AI MVP in weeks. Fast, affordable, and hassle-free.
             </p>
           </div>
-          <p className="text-center text-gray-400">
+          <p className="text-center text-gray-600">
             © 2024 Algorism LLC. All Rights Reserved.
           </p>
         </div>
