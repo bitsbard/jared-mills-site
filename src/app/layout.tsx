@@ -8,8 +8,7 @@ export const metadata: Metadata = {
   title: 'Algorism - Generative AI Development Agency',
   description: 'Expert AI solutions for businesses. Create custom chatbots, AI-powered apps, and machine learning models. Fast MVP development, affordable pricing, and seamless integration. Boost productivity with artificial intelligence technology.',
   icons: {
-    icon: '/algorism2.png',
-    apple: '/algorism2.png',
+    icon: '/algorism2.png', // Reference your new favicon here
   },
 }
 
