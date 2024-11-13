@@ -34,28 +34,20 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <header className="container mx-auto px-4 py-6 flex items-center justify-between">
+      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src="/algorism.png"
             alt="Algorism Logo"
-            width={150}
-            height={40}
+            width={75}
+            height={20}
             className="object-contain"
           />
         </Link>
         
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center">
           <Link href="/" className="text-white hover:text-[#08c0e5] transition-colors">
             Our Work
-          </Link>
-          <Link 
-            href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
-            className="px-4 py-2 bg-[#08c0e5] text-black rounded-md hover:bg-[#08c0e5]/90 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Talk with us
           </Link>
         </nav>
       </header>
@@ -69,9 +61,10 @@ const LandingPage = () => {
             className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/0" />
         </div>
 
-        <section className="container mx-auto px-4 py-16">
+        <section className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
@@ -97,7 +90,7 @@ const LandingPage = () => {
             <p className="text-xl text-gray-400 mb-8">Let&apos;s talk and see if you&apos;re a good fit.</p>
             <Link 
               href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
-              className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md hover:bg-[#08c0e5]/90 transition-colors text-lg font-semibold"
+              className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -108,13 +101,13 @@ const LandingPage = () => {
       </main>
 
       <footer className="border-t border-[#121212] py-12">
-        <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <Image
               src="/algorism.png"
               alt="Algorism Logo"
-              width={120}
-              height={32}
+              width={60}
+              height={16}
               className="object-contain"
             />
             <p className="text-gray-400 text-center md:text-left">
