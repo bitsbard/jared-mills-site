@@ -1,5 +1,4 @@
-// src/app/our-work/page.tsx
-'use client'; // Add this at the top since we're using client-side features
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
