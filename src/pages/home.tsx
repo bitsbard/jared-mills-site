@@ -65,32 +65,32 @@ const HomePage: React.FC = () => {
             <FeatureCard 
               icon={<Brain />} 
               title="AI-First Development" 
-              description="Custom LLMs, RAG systems, and intelligent agents tailored to your needs." 
+              description="Custom AI image, video, audio, and text systems tailored to your needs" 
             />
             <FeatureCard 
               icon={<Rocket />} 
               title="Swift Deployment" 
-              description="Full-stack AI solutions ready for market in 3-4 weeks." 
+              description="Full-stack AI solutions ready for market in 3-4 weeks" 
             />
             <FeatureCard 
               icon={<Code2 />} 
               title="End-to-End Solution" 
-              description="From UI/UX to backend infrastructure and AI model deployment." 
+              description="From UI/UX to backend infrastructure and AI model deployment" 
             />
             <FeatureCard 
               icon={<Zap />} 
               title="Cutting-Edge Tech" 
-              description="Latest in AI/ML, including GPT-4, Claude, and open-source models." 
+              description="Latest in AI/ML, including GPT-4, Claude, and open-source models" 
             />
             <FeatureCard 
               icon={<Users />} 
               title="AI Experts" 
-              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products." 
+              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products" 
             />
             <FeatureCard 
               icon={<Search />} 
               title="Data-Driven" 
-              description="Analytics integration and A/B testing for continuous improvement." 
+              description="Analytics integration and A/B testing for continuous improvement" 
             />
           </div>
 
