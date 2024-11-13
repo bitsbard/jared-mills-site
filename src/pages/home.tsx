@@ -58,8 +58,8 @@ const HomePage: React.FC = () => {
         <section className="max-w-4xl mx-auto px-4 py-16 text-center">
           <h1 className="text-6xl font-bold mb-6">Power Your Business with AI</h1>
           <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            From concept to deployment, we build cutting-edge AI solutions that transform 
-            your business. Harness the power of LLMs, computer vision, and voice AI.
+            From concept to deployment, we build cutting-edge generative AI solutions that transform 
+            your business.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
         {/* Services Section */}
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <ServiceCard 
               title="AI Consulting" 
               price="$200" 
@@ -174,6 +174,16 @@ const HomePage: React.FC = () => {
                 "Deployment & monitoring"
               ]}
             />
+          </div>
+          <div className="text-center">
+            <Link 
+              href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
+              className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Call
+            </Link>
           </div>
         </section>
       </main>
@@ -244,7 +254,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, description, fe
     <h3 className="text-2xl font-semibold mb-2">{title}</h3>
     <p className="text-3xl font-bold text-[#08c0e5] mb-2">{price}<span className="text-lg text-gray-400">/hour</span></p>
     <p className="text-gray-400 mb-6">{description}</p>
-    <ul className="space-y-3 mb-8">
+    <ul className="space-y-3">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center">
           <Check className="w-5 h-5 text-[#08c0e5] mr-2" />
@@ -252,14 +262,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, description, fe
         </li>
       ))}
     </ul>
-    <Link 
-      href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
-      className="block w-full px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold text-center"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Book a Call
-    </Link>
   </div>
 );
 
