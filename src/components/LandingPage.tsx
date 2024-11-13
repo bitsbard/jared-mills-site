@@ -24,7 +24,8 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
           />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+          {/* Project title with black background */}
+          <h3 className="text-xl font-semibold text-white mb-2 bg-black px-2 py-1">{title}</h3>
           <p className="text-gray-400">{description}</p>
         </div>
       </Link>
@@ -35,25 +36,19 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 const LandingPage = () => {
   return (
     <div className="min-h-screen text-white relative">
-      {/* Limited background image only for the main content */}
-      <div className="relative">
+      {/* Background image limited to main content only */}
+      <div className="relative h-[80vh]">
         <Image
           src="/algorism_background.jpg"
           alt="Algorism Background"
           fill
           className="object-cover z-0"
           priority
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-          }}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
         />
       </div>
 
-      {/* Header and main content within the transparent container */}
+      {/* Transparent page content */}
       <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
@@ -82,7 +77,7 @@ const LandingPage = () => {
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
 
-          {/* Displaying each project in a single column */}
+          {/* Displaying each project in a single column (one per row) */}
           <div className="grid grid-cols-1 gap-8 mb-16">
             <ProjectCard
               title="Project Alpha"
@@ -113,8 +108,8 @@ const LandingPage = () => {
         </section>
       </main>
 
-      {/* Solid black footer without overlay */}
-      <footer className="bg-black py-12 relative z-10">
+      {/* Footer below the background image */}
+      <footer className="bg-black py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <Image
@@ -128,7 +123,7 @@ const LandingPage = () => {
               Transform your idea into a market-ready Gen AI MVP in weeks. Fast, affordable, and hassle-free.
             </p>
           </div>
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-800">
             © 2024 Algorism LLC. All Rights Reserved.
           </p>
         </div>
