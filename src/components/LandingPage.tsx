@@ -1,8 +1,5 @@
-"use client";
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -19,7 +16,12 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
     >
       <Link href={projectUrl} className="block">
         <div className="relative h-64 w-full">
-          <Image src={imageUrl} alt={title} fill className="object-cover" />
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover"
+          />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-semibold text-white mb-2 bg-black px-2 py-1">{title}</h3>
@@ -31,51 +33,50 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 };
 
 const LandingPage = () => {
-  // Lock scrolling above top logo
-  useEffect(() => {
-    document.body.style.overflowY = 'hidden';
-  }, []);
-
   return (
-    <div className="min-h-screen text-white relative overflow-y-scroll">
-      <div className="relative h-[80vh] bg-black">
+    <div className="min-h-screen text-white relative overflow-hidden">
+      {/* Background image limited to main content only */}
+      <div className="relative h-[80vh]">
         <Image
           src="/algorism_background.jpg"
           alt="Algorism Background"
           fill
           className="object-cover z-0"
           priority
-          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '80vh' }}
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
         />
       </div>
 
-      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-10 bg-black">
+      {/* Transparent page content */}
+      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
-          <Image src="/algorism.png" alt="Algorism Logo" width={75} height={20} className="object-contain" />
+          <Image
+            src="/algorism.png"
+            alt="Algorism Logo"
+            width={75}
+            height={20}
+            className="object-contain"
+          />
         </Link>
         
         <nav className="flex items-center space-x-8">
           <Link href="/" className="text-white hover:font-bold transition-all">
             Our Work
           </Link>
-          <Link
-            href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
-            className="text-white hover:font-bold transition-all"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
             Talk With Us
           </Link>
         </nav>
       </header>
 
-      <main className="relative z-10 bg-black pb-16">
-        <section className="max-w-4xl mx-auto px-4 py-16 text-left">
+      <main className="relative z-10">
+        <section className="max-w-4xl mx-auto px-4 py-16 text-left bg-black">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
 
+          {/* Displaying each project in a single column (one per row) */}
           <div className="grid grid-cols-1 gap-8 mb-16">
             <ProjectCard
               title="Project Alpha"
@@ -94,7 +95,7 @@ const LandingPage = () => {
           <div className="text-left py-16">
             <h3 className="text-3xl font-bold mb-4">Could You Be Next?</h3>
             <p className="text-xl text-gray-400 mb-8">Let&apos;s talk and see if you&apos;re a good fit.</p>
-            <Link
+            <Link 
               href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
               className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
               target="_blank"
@@ -106,10 +107,17 @@ const LandingPage = () => {
         </section>
       </main>
 
-      <footer className="bg-black py-12 mt-auto">
+      {/* Footer below the background image */}
+      <footer className="bg-black py-12 relative">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-            <Image src="/algorism.png" alt="Algorism Logo" width={60} height={16} className="object-contain" />
+            <Image
+              src="/algorism.png"
+              alt="Algorism Logo"
+              width={60}
+              height={16}
+              className="object-contain"
+            />
             <p className="text-gray-400 text-center md:text-left">
               Transform your idea into a market-ready Gen AI MVP in weeks. Fast, affordable, and hassle-free.
             </p>
