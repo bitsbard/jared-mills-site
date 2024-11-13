@@ -79,8 +79,6 @@ const HomePage: React.FC = () => {
             <PricingCard title="Development" price="$150" per="per hour" />
           </div>
         </section>
-
-        {/* Add more sections as needed */}
       </main>
 
       {/* Footer */}

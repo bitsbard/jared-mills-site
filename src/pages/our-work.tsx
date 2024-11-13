@@ -32,7 +32,7 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
   );
 };
 
-const LandingPage = () => {
+const OurWorkPage = () => {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Full-screen Background */}
@@ -59,7 +59,7 @@ const LandingPage = () => {
         </Link>
         
         <nav className="flex items-center space-x-8">
-          <Link href="/" className="text-white hover:font-bold transition-all">
+          <Link href="/our-work" className="text-white hover:font-bold transition-all">
             Our Work
           </Link>
           <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
@@ -131,4 +131,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default OurWorkPage;
