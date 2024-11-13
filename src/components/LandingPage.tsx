@@ -11,8 +11,8 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardProps) => {
   return (
     <div
-      className="relative rounded-lg overflow-hidden border border-gray-800 bg-black transition-transform duration-300 hover:-translate-y-2"
-      // Increased border thickness and darkened color
+      className="relative rounded-lg overflow-hidden border border-gray-400 transition-transform duration-300 hover:-translate-y-2"
+      // Border style and width
       style={{ borderWidth: '2px' }}
     >
       <Link href={projectUrl} className="block">
@@ -35,8 +35,8 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-black text-white relative">
-      {/* Background image covering entire page */}
+    <div className="min-h-screen text-white relative">
+      {/* Full-page background image */}
       <Image
         src="/algorism_background.jpg"
         alt="Algorism Background"
@@ -45,11 +45,9 @@ const LandingPage = () => {
         priority
         style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
       />
-      {/* Adjusted overlay gradient to only cover main content, leaving footer visible */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/0 to-black/100 z-10" />
 
-      {/* Page content */}
-      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-20">
+      {/* Page content without background overlay */}
+      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
             src="/algorism.png"
@@ -71,7 +69,7 @@ const LandingPage = () => {
         </nav>
       </header>
 
-      <main className="relative z-20">
+      <main className="relative z-10">
         <section className="max-w-4xl mx-auto px-4 py-16 text-left">
           {/* Centered container with left-aligned text */}
           <div className="mb-16">
@@ -110,8 +108,8 @@ const LandingPage = () => {
         </section>
       </main>
 
-      <footer className="py-12 relative z-20">
-        {/* Footer without border */}
+      {/* Footer with solid black background */}
+      <footer className="bg-black py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <Image
@@ -125,7 +123,7 @@ const LandingPage = () => {
               Transform your idea into a market-ready Gen AI MVP in weeks. Fast, affordable, and hassle-free.
             </p>
           </div>
-          <p className="text-center text-gray-600">
+          <p className="text-center text-gray-400">
             © 2024 Algorism LLC. All Rights Reserved.
           </p>
         </div>
