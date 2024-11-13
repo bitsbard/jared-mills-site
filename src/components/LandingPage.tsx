@@ -34,21 +34,20 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen text-white relative overflow-hidden">
-      {/* Background image limited to main content only */}
-      <div className="relative h-[80vh]">
+    <div className="min-h-screen text-white overflow-x-hidden">
+      {/* Full-screen Background */}
+      <div className="fixed top-0 left-0 w-full h-full">
         <Image
           src="/algorism_background.jpg"
           alt="Algorism Background"
-          fill
+          layout="fill"
           className="object-cover z-0"
           priority
-          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
         />
       </div>
 
-      {/* Transparent page content */}
-      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-10">
+      {/* Header at top of the viewport */}
+      <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
             src="/algorism.png"
@@ -69,7 +68,8 @@ const LandingPage = () => {
         </nav>
       </header>
 
-      <main className="relative z-10">
+      {/* Main content */}
+      <main className="relative z-10 mt-16">
         <section className="max-w-4xl mx-auto px-4 py-16 text-left bg-black">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
@@ -107,8 +107,8 @@ const LandingPage = () => {
         </section>
       </main>
 
-      {/* Footer below the background image */}
-      <footer className="bg-black py-12 relative">
+      {/* Footer below main content */}
+      <footer className="bg-black py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <Image
