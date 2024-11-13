@@ -48,7 +48,7 @@ const HomePage: React.FC = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            Talk With Us
+            Schedule Meeting
           </Link>
         </nav>
       </header>

@@ -65,7 +65,7 @@ export default function OurWorkPage() {
             Our Work
           </Link>
           <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
-            Talk With Us
+            Schedule Meeting
           </Link>
         </nav>
       </header>
