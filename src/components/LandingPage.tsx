@@ -107,8 +107,8 @@ const LandingPage = () => {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black py-12 relative z-10">
+      {/* Transparent Footer */}
+      <footer className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <Image
@@ -118,7 +118,7 @@ const LandingPage = () => {
               height={16}
               className="object-contain"
             />
-            <p className="text-gray-400 text-center md:text-left">
+            <p className="text-white text-center md:text-left">
               Transform your idea into a market-ready Gen AI MVP in weeks. Fast, affordable, and hassle-free.
             </p>
           </div>
