@@ -84,12 +84,12 @@ const HomePage: React.FC = () => {
             />
             <FeatureCard 
               icon={<Users />} 
-              title="AI Engineering Experts" 
+              title="AI Experts" 
               description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products." 
             />
             <FeatureCard 
               icon={<Search />} 
-              title="Data-Driven Approach" 
+              title="Data-Driven" 
               description="Analytics integration and A/B testing for continuous improvement." 
             />
           </div>
