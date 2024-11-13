@@ -59,7 +59,7 @@ const HomePage: React.FC = () => {
         <section className="max-w-4xl mx-auto px-4 py-16 text-center">
           <h1 className="text-6xl font-bold mb-6">Power Your Business with AI</h1>
           <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            From concept to deployment, we build cutting-edge generative AI solutions that transform businesses productivity.
+            From concept to deployment, we build cutting-edge generative AI solutions that transform business productivity.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
