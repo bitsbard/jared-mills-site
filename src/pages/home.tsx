@@ -154,7 +154,7 @@ const HomePage: React.FC = () => {
               description="Strategic AI integration planning, use case identification, and implementation roadmap."
               features={[
                 "AI readiness assessment",
-                "Custom LLM strategy",
+                "Custom generative AI strategy",
                 "ROI analysis",
                 "Risk mitigation planning"
               ]}
@@ -164,7 +164,7 @@ const HomePage: React.FC = () => {
               price="$150" 
               description="Full-stack AI solution development with state-of-the-art models and technologies."
               features={[
-                "Custom LLM fine-tuning",
+                "Image, video, or audio generative models",
                 "RAG system implementation",
                 "Full-stack integration",
                 "Deployment & monitoring"
