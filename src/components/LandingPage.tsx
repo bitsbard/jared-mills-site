@@ -74,7 +74,7 @@ const LandingPage = () => {
         <section className="container mx-auto px-4 py-16">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
-            <p className="text-xl text-gray-400">Discover the future we're building, one project at a time</p>
+            <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -94,7 +94,7 @@ const LandingPage = () => {
 
           <div className="text-center py-16">
             <h3 className="text-3xl font-bold mb-4">Could You Be Next?</h3>
-            <p className="text-xl text-gray-400 mb-8">Let's talk and see if you're a good fit.</p>
+            <p className="text-xl text-gray-400 mb-8">Let&apos;s talk and see if you&apos;re a good fit.</p>
             <Link 
               href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
               className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md hover:bg-[#08c0e5]/90 transition-colors text-lg font-semibold"
