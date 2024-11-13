@@ -10,8 +10,10 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardProps) => {
   return (
-    <div 
-      className="relative rounded-lg overflow-hidden border border-[#121212] bg-black transition-transform duration-300 hover:-translate-y-2"
+    <div
+      className="relative rounded-lg overflow-hidden border border-gray-800 bg-black transition-transform duration-300 hover:-translate-y-2"
+      // Increased border thickness and darkened color
+      style={{ borderWidth: '2px' }}
     >
       <Link href={projectUrl} className="block">
         <div className="relative h-64 w-full">
@@ -33,8 +35,20 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between">
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Background image covering entire page */}
+      <Image
+        src="/algorism_background.jpg"
+        alt="Algorism Background"
+        fill
+        className="object-cover z-0"
+        priority
+        style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/0 z-10" />
+
+      {/* Page content */}
+      <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-20">
         <Link href="/" className="flex items-center">
           <Image
             src="/algorism.png"
@@ -45,27 +59,20 @@ const LandingPage = () => {
           />
         </Link>
         
-        <nav className="flex items-center">
-          <Link href="/" className="text-white hover:text-[#08c0e5] transition-colors">
+        <nav className="flex items-center space-x-8">
+          <Link href="/" className="text-white hover:font-bold transition-all">
             Our Work
+          </Link>
+          <Link href="/contact" className="text-white hover:font-bold transition-all">
+            Talk With Us
           </Link>
         </nav>
       </header>
 
-      <main>
-        <div className="relative h-[60vh] w-full">
-          <Image
-            src="/algorism_background.jpg"
-            alt="Algorism Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/0" />
-        </div>
-
-        <section className="max-w-4xl mx-auto px-4 py-16">
-          <div className="text-center mb-16">
+      <main className="relative z-20">
+        <section className="max-w-4xl mx-auto px-4 py-16 text-left">
+          {/* Centered container with left-aligned text */}
+          <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Work</h2>
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
@@ -85,7 +92,7 @@ const LandingPage = () => {
             />
           </div>
 
-          <div className="text-center py-16">
+          <div className="text-left py-16">
             <h3 className="text-3xl font-bold mb-4">Could You Be Next?</h3>
             <p className="text-xl text-gray-400 mb-8">Let&apos;s talk and see if you&apos;re a good fit.</p>
             <Link 
@@ -100,7 +107,8 @@ const LandingPage = () => {
         </section>
       </main>
 
-      <footer className="border-t border-[#121212] py-12">
+      <footer className="py-12">
+        {/* Footer without border */}
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
             <Image
