@@ -8,10 +8,10 @@ const SITE_URL = 'https://algorism.co'
 const SOCIAL_IMAGE = `${SITE_URL}/algorism_social_bg.png`
 
 // Long-form description for places where space permits
-const FULL_DESCRIPTION = 'Transform your business with cutting-edge AI development. Our expertise includes LLM integration, RAG systems, Stable Diffusion implementation, text-to-speech (TTS), Runway video generation, chatbots and custom AI applications. We deliver fast MVP development and seamless AI solutions for enterprises and startups.'
+const FULL_DESCRIPTION = 'Transform your business with cutting-edge AI development. Our expertise is in generative AI which includes LLM integration, RAG systems, Stable Diffusion implementation, text-to-speech (TTS), Runway video generation, chatbots and custom AI applications. We deliver fast MVP development and seamless AI solutions for enterprises and startups.'
 
 // Shorter version for social media
-const SOCIAL_DESCRIPTION = 'Expert AI development agency specializing in Stable Diffusion, text-to-speech, video generation, and custom LLM solutions. Transform your business with state-of-the-art AI technology.'
+const SOCIAL_DESCRIPTION = 'Expert AI development agency specializing in generative AI including Stable Diffusion, text-to-speech, video generation, and custom LLM solutions. Transform your business with state-of-the-art AI technology.'
 
 export const metadata: Metadata = {
   title: 'Algorism - Generative AI Development Agency',
