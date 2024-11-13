@@ -45,7 +45,8 @@ const LandingPage = () => {
         priority
         style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/0 z-10" />
+      {/* Adjusted overlay gradient to only cover main content, leaving footer visible */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/0 to-black/100 z-10" />
 
       {/* Page content */}
       <header className="max-w-4xl mx-auto px-4 py-6 flex items-center justify-between relative z-20">
@@ -63,7 +64,8 @@ const LandingPage = () => {
           <Link href="/" className="text-white hover:font-bold transition-all">
             Our Work
           </Link>
-          <Link href="/contact" className="text-white hover:font-bold transition-all">
+          {/* Updated link for "Talk With Us" to direct to "Book a Call" page */}
+          <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
             Talk With Us
           </Link>
         </nav>
@@ -77,7 +79,8 @@ const LandingPage = () => {
             <p className="text-xl text-gray-400">Discover the future we&apos;re building, one project at a time</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {/* Displaying each project in a single column (one per row) */}
+          <div className="grid grid-cols-1 gap-8 mb-16">
             <ProjectCard
               title="Project Alpha"
               description="AI-powered analytics platform revolutionizing business intelligence"
@@ -107,7 +110,7 @@ const LandingPage = () => {
         </section>
       </main>
 
-      <footer className="py-12">
+      <footer className="py-12 relative z-20">
         {/* Footer without border */}
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
