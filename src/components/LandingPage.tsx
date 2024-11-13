@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,9 +10,8 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardProps) => {
   return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="relative rounded-lg overflow-hidden border border-[#121212] bg-black"
+    <div 
+      className="relative rounded-lg overflow-hidden border border-[#121212] bg-black transition-transform duration-300 hover:-translate-y-2"
     >
       <Link href={projectUrl} className="block">
         <div className="relative h-64 w-full">
@@ -29,7 +27,7 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }: ProjectCardPr
           <p className="text-gray-400">{description}</p>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 
@@ -65,7 +63,7 @@ const LandingPage = () => {
       <main>
         <div className="relative h-[60vh] w-full">
           <Image
-            src="/algorism_background.png"
+            src="/algorism_background.jpg"
             alt="Algorism Background"
             fill
             className="object-cover"
