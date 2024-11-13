@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
             <FeatureCard 
               icon={<Users />} 
               title="AI Engineering Experts" 
-              description="Team of ML engineers and full-stack developers who've built successful AI products." 
+              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products." 
             />
             <FeatureCard 
               icon={<Search />} 
@@ -173,7 +173,7 @@ const HomePage: React.FC = () => {
                 <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
                 <p className="text-gray-300 mb-4">
                   With over a decade of experience in AI and software development, 
-                  our team has built numerous successful AI products. We're here to 
+                  our team has built numerous successful AI products. We&apos;re here to 
                   help you navigate the AI landscape and build solutions that drive 
                   real business value.
                 </p>
