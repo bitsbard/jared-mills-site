@@ -53,15 +53,30 @@ const HomePage: React.FC = () => {
   const scrollWidth = techStack.length * 100;
 
   useEffect(() => {
+    let cycleCount = 0; // Track the number of cycles completed
+    const maxCycles = 200;
+    const totalWidth = techStack.reduce((acc, item) => acc + item.width, 0); // Dynamically calculate scroll width
+    
     const scrollInterval = setInterval(() => {
       setScrollPosition((prev) => {
         const newPosition = prev - scrollSpeed;
-        return newPosition <= -scrollWidth ? 0 : newPosition;
+  
+        // Check if we've reached the end of the scroll area
+        if (newPosition <= -totalWidth) {
+          cycleCount += 1;
+          if (cycleCount >= maxCycles) {
+            clearInterval(scrollInterval); // Stop the interval after reaching max cycles
+            return prev; // Stop at the last position
+          }
+          return 0; // Reset to the start
+        }
+  
+        return newPosition;
       });
     }, 30);
-
+  
     return () => clearInterval(scrollInterval);
-  }, [scrollWidth]);
+  }, []);  
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
