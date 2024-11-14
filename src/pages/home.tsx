@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Tech We Use Section */}
-        <section className="max-w-4xl mx-auto px-4 pt-4 pb-8">
+        <section className="max-w-4xl mx-auto px-4 py-8">
           <p className="text-xl text-gray-400 mb-4 text-center">Tech We Use</p>
           <div className="flex justify-between items-center w-full">
             <img src="/python.png" alt="Python" style={{ height: '30px' }} />
