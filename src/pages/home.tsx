@@ -130,12 +130,15 @@ const HomePage: React.FC = () => {
         {/* Tech We Use Section */}
         <section className="max-w-4xl mx-auto px-4 pt-8 pb-16">
           <p className="text-xl text-gray-400 mb-4 text-center">Tech We Use</p>
-          <div className="flex justify-between items-center w-full">
-            <img src="/react.png" alt="React" style={{ height: '52px' }} />
-            <img src="/openai.png" alt="OpenAI" style={{ height: '31px' }} />
-            <img src="/segmind.png" alt="Segmind" style={{ height: '29px' }} />
-            <img src="/vercel.png" alt="Vercel" style={{ height: '26px' }} />
-            <img src="/gcp.png" alt="GCP" style={{ height: '26px' }} />
+          {/* Add a container with background blur */}
+          <div className="bg-black bg-opacity-50 backdrop-blur-sm rounded-xl p-8">
+            <div className="flex justify-between items-center w-full">
+              <img src="/react.png" alt="React" style={{ height: '52px' }} />
+              <img src="/gcp.png" alt="GCP" style={{ height: '26px' }} />
+              <img src="/segmind.png" alt="Segmind" style={{ height: '29px' }} />
+              <img src="/vercel.png" alt="Vercel" style={{ height: '26px' }} />
+              <img src="/openai.png" alt="OpenAI" style={{ height: '31px' }} />
+            </div>
           </div>
         </section>
 
