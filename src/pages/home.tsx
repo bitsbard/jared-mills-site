@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Brain, Rocket, Code2, Zap, Users, Search, Check } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { Brain, Rocket, Code2, Zap, Users, Search, Check } from "lucide-react";
+import React, { useEffect, useState } from "react";
 
 interface TechStackItem {
   src: string;
@@ -30,21 +30,21 @@ interface ServiceCardProps {
 }
 
 const techStack: TechStackItem[] = [
-  { src: '/javascript.png', alt: 'JavaScript' },
-  { src: '/typescript.png', alt: 'TypeScript' },
-  { src: '/python.png', alt: 'Python' },
-  { src: '/react.png', alt: 'React' },
-  { src: '/node.png', alt: 'Node.js' },
-  { src: '/aws.png', alt: 'AWS' },
-  { src: '/postgresql.png', alt: 'PostgreSQL' },
-  { src: '/vercel.png', alt: 'Vercel' },
-  { src: '/tensorflow.png', alt: 'TensorFlow' },
-  { src: '/openai.png', alt: 'OpenAI' },
-  { src: '/segmind.png', alt: 'Segmind' },
-  { src: '/gcp.png', alt: 'GCP' },
-  { src: '/hotjar.png', alt: 'Hotjar' },
-  { src: '/llama.png', alt: 'Llama' },
-  { src: '/github.png', alt: 'GitHub' }
+  { src: "/javascript.png", alt: "JavaScript" },
+  { src: "/typescript.png", alt: "TypeScript" },
+  { src: "/python.png", alt: "Python" },
+  { src: "/react.png", alt: "React" },
+  { src: "/node.png", alt: "Node.js" },
+  { src: "/aws.png", alt: "AWS" },
+  { src: "/postgresql.png", alt: "PostgreSQL" },
+  { src: "/vercel.png", alt: "Vercel" },
+  { src: "/tensorflow.png", alt: "TensorFlow" },
+  { src: "/openai.png", alt: "OpenAI" },
+  { src: "/segmind.png", alt: "Segmind" },
+  { src: "/gcp.png", alt: "GCP" },
+  { src: "/hotjar.png", alt: "Hotjar" },
+  { src: "/llama.png", alt: "Llama" },
+  { src: "/github.png", alt: "GitHub" }
 ];
 
 const HomePage: React.FC = () => {
@@ -134,7 +134,7 @@ const HomePage: React.FC = () => {
             <FeatureCard 
               icon={<Users />} 
               title="AI Experts" 
-              description="Team of ML engineers and full-stack developers who've built successful AI products" 
+              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products" 
             />
             <FeatureCard 
               icon={<Search />} 
@@ -178,7 +178,7 @@ const HomePage: React.FC = () => {
               className="absolute flex items-center space-x-8 py-4"
               style={{
                 transform: `translateX(${scrollPosition}px)`,
-                transition: 'transform 30ms linear',
+                transition: "transform 30ms linear",
                 width: `${scrollWidth * 2}px`
               }}
             >
@@ -203,7 +203,7 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hi I'm Stuart. With years in AI and machine learning I've seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
+              Hi I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
             </p>
             <Link 
               href="https://x.com/stuartxmills" 
