@@ -3,9 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Brain, Rocket, Code2, Zap, Users, Search, Check } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HomePage: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
   const logos = [
     { src: "/python.png", alt: "Python", height: 75 },
     { src: "/react.png", alt: "React", height: 60 },
@@ -17,7 +20,12 @@ const HomePage: React.FC = () => {
     { src: "/github.png", alt: "GitHub", height: 65 },
   ];
 
-  const trackRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -42,7 +50,8 @@ const HomePage: React.FC = () => {
   }, []);
 
   const renderLogos = () => {
-    const cloneCount = Math.ceil(window.innerWidth / 190);
+    const logoWidth = 190; // Logo width + margin
+    const cloneCount = Math.ceil(windowWidth / logoWidth);
     const allLogos = [...logos, ...Array(cloneCount).fill(logos).flat()];
     
     return allLogos.map((logo, index) => (
