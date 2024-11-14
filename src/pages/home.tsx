@@ -3,13 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Brain, Rocket, Code2, Zap, Users, Search, Check } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface TechStackItem {
   src: string;
   alt: string;
-  width: number;
-  height: number;
 }
 
 interface FeatureCardProps {
@@ -31,6 +29,13 @@ interface ServiceCardProps {
   features: string[];
 }
 
+interface TechStackItem {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 const techStack: TechStackItem[] = [
   { src: "/python.png", alt: "Python", width: 60, height: 60 },
   { src: "/react.png", alt: "React", width: 55, height: 55 },
@@ -39,10 +44,30 @@ const techStack: TechStackItem[] = [
   { src: "/openai.png", alt: "OpenAI", width: 70, height: 70 },
   { src: "/segmind.png", alt: "Segmind", width: 60, height: 60 },
   { src: "/gcp.png", alt: "GCP", width: 58, height: 58 },
-  { src: "/github.png", alt: "GitHub", width: 55, height: 55 },
+  { src: "/github.png", alt: "GitHub", width: 55, height: 55 }
 ];
 
 const HomePage: React.FC = () => {
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const scrollSpeed = 0.5; // Reduced speed for smoother animation
+
+  useEffect(() => {
+    const totalWidth = techStack.reduce((acc, item) => acc + item.width + 32, 0); // Include margin
+    let animationFrameId: number;
+
+    const animate = () => {
+      setScrollPosition((prev) => {
+        const newPosition = prev - scrollSpeed;
+        return newPosition <= -totalWidth / 2 ? 0 : newPosition;
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
@@ -134,27 +159,6 @@ const HomePage: React.FC = () => {
         </section>
 
         <section className="max-w-4xl mx-auto px-4 py-16">
-          <h2 className="text-4xl font-bold mb-12 text-center">Tech Stack</h2>
-          <div className="relative h-16 rounded-lg overflow-hidden">
-            <div className="carousel-animation flex items-center space-x-8 py-4">
-              {[...techStack, ...techStack].map((tech, index) => (
-                <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
-                  <Image
-                    src={tech.src}
-                    alt={tech.alt}
-                    width={tech.width}
-                    height={tech.height}
-                    className="object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
           <div className="flex flex-col md:flex-row justify-between items-center mb-16">
             <ProcessStep 
@@ -172,6 +176,31 @@ const HomePage: React.FC = () => {
               title="Deployment & Training" 
               description="Seamless deployment and comprehensive team training." 
             />
+          </div>
+          
+          <div className="relative h-16 rounded-lg overflow-hidden">
+            <div
+              className="absolute flex items-center space-x-8 py-4"
+              style={{
+                transform: `translateX(${scrollPosition}px)`,
+                transition: "transform 0.1s linear",
+                width: `${techStack.length * 200}px`, // Adjust based on your needs
+              }}
+            >
+              {[...techStack, ...techStack].map((tech, index) => (
+                <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
+                  <Image
+                    src={tech.src}
+                    alt={tech.alt}
+                    width={tech.width}
+                    height={tech.height}
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
           </div>
         </section>
 
@@ -222,7 +251,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="text-center">
             <Link 
-              href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" 
+              href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
               className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
@@ -232,38 +261,58 @@ const HomePage: React.FC = () => {
           </div>
         </section>
       </main>
+
+      <footer className="py-12 relative z-10">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+            <Image
+              src="/algorism.png"
+              alt="Algorism Logo"
+              width={60}
+              height={16}
+              className="object-contain"
+            />
+            <p className="text-white text-center md:text-left">
+              <strong>Transform your idea into an AI app in weeks</strong>
+            </p>
+          </div>
+          <p className="text-center text-gray-400">
+            © 2024 Algorism LLC. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
-  <div className="bg-black bg-opacity-50 border border-gray-700 p-6 rounded-md shadow-md">
-    <div className="text-[#08c0e5] mb-4">{icon}</div>
-    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <p className="text-gray-300">{description}</p>
+  <div className="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800">
+    <div className="text-4xl mb-4 text-[#08c0e5] flex justify-center">{icon}</div>
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p className="text-gray-400">{description}</p>
   </div>
 );
 
 const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description }) => (
-  <div className="max-w-sm mx-auto text-center">
-    <div className="w-16 h-16 bg-[#08c0e5] text-black rounded-full flex items-center justify-center font-semibold text-xl mx-auto mb-4">
+  <div className="text-center mb-8 md:mb-0 p-6 rounded-lg relative z-10">
+    <div className="w-16 h-16 bg-[#08c0e5] rounded-full flex items-center justify-center text-black text-xl font-bold mb-4 mx-auto">
       {number}
     </div>
-    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <p className="text-gray-300">{description}</p>
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p className="text-gray-400">{description}</p>
   </div>
 );
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, description, features }) => (
-  <div className="bg-black bg-opacity-50 border border-gray-700 p-6 rounded-md shadow-md text-center">
-    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <p className="text-xl font-bold mb-4">{price}</p>
-    <p className="text-gray-300 mb-4">{description}</p>
-    <ul className="text-left list-none space-y-2">
+  <div className="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800">
+    <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+    <p className="text-3xl font-bold text-[#08c0e5] mb-2">{price}<span className="text-lg text-gray-400">/hour</span></p>
+    <p className="text-gray-400 mb-6">{description}</p>
+    <ul className="space-y-3">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center">
-          <Check className="w-4 h-4 text-[#08c0e5] mr-2" />
-          <span>{feature}</span>
+          <Check className="w-5 h-5 text-[#08c0e5] mr-2" />
+          <span className="text-gray-300">{feature}</span>
         </li>
       ))}
     </ul>
