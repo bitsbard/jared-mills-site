@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Brain, Rocket, Code2, Zap, Users, Search, Check } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 interface TechStackItem {
   src: string;
@@ -50,15 +50,19 @@ const techStack: TechStackItem[] = [
 const HomePage: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const scrollSpeed = 0.5; // Adjust this value for desired speed
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const containerWidth = techStack.reduce((acc, item) => acc + item.width + 32, 0); // Include margin
+    const container = containerRef.current;
+    if (!container) return;
+
+    const totalWidth = container.scrollWidth / 2; // Half because we duplicated the content
     let animationFrameId: number;
 
     const animate = () => {
-      setScrollPosition((prev) => {
-        const newPosition = (prev - scrollSpeed) % containerWidth;
-        return newPosition < 0 ? newPosition + containerWidth : newPosition;
+      setScrollPosition((prevPosition) => {
+        const newPosition = prevPosition - scrollSpeed;
+        return newPosition <= -totalWidth ? 0 : newPosition;
       });
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -180,14 +184,14 @@ const HomePage: React.FC = () => {
           
           <div className="relative h-16 rounded-lg overflow-hidden">
             <div
+              ref={containerRef}
               className="absolute flex items-center space-x-8 py-4"
               style={{
-                transform: `translateX(${-scrollPosition}px)`,
+                transform: `translateX(${scrollPosition}px)`,
                 transition: "transform 0.1s linear",
-                width: `${techStack.length * 200}px`, // Adjust based on your needs
               }}
             >
-              {[...techStack, ...techStack, ...techStack].map((tech, index) => (
+              {[...techStack, ...techStack].map((tech, index) => (
                 <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
                   <Image
                     src={tech.src}
