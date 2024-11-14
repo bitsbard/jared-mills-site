@@ -51,19 +51,44 @@ const HomePage: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const scrollSpeed = 0.5; // Adjust this value for desired speed
   const containerRef = useRef<HTMLDivElement>(null);
+  const [visibleImages, setVisibleImages] = useState<TechStackItem[]>([]);
+  const cyclesRef = useRef<number>(0);
+  const maxCycles = 100; // Number of cycles before pausing
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const totalWidth = container.scrollWidth / 2; // Half because we duplicated the content
+    const containerWidth = container.offsetWidth;
     let animationFrameId: number;
 
+    const updateVisibleImages = () => {
+      const startIndex = Math.floor(scrollPosition / 100) % techStack.length;
+      const endIndex = Math.ceil((scrollPosition + containerWidth) / 100) % techStack.length;
+      
+      let newVisibleImages = [];
+      if (startIndex <= endIndex) {
+        newVisibleImages = techStack.slice(startIndex, endIndex + 1);
+      } else {
+        newVisibleImages = [...techStack.slice(startIndex), ...techStack.slice(0, endIndex + 1)];
+      }
+
+      setVisibleImages(newVisibleImages);
+    };
+
     const animate = () => {
+      if (cyclesRef.current >= maxCycles) return;
+
       setScrollPosition((prevPosition) => {
-        const newPosition = prevPosition - scrollSpeed;
-        return newPosition <= -totalWidth ? 0 : newPosition;
+        const newPosition = prevPosition + scrollSpeed;
+        if (newPosition >= techStack.length * 100) {
+          cyclesRef.current += 1;
+          return 0;
+        }
+        return newPosition;
       });
+
+      updateVisibleImages();
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -182,16 +207,15 @@ const HomePage: React.FC = () => {
             />
           </div>
           
-          <div className="relative h-16 rounded-lg overflow-hidden">
+          <div className="relative h-16 rounded-lg overflow-hidden" ref={containerRef}>
             <div
-              ref={containerRef}
               className="absolute flex items-center space-x-8 py-4"
               style={{
-                transform: `translateX(${scrollPosition}px)`,
+                transform: `translateX(${-scrollPosition}px)`,
                 transition: "transform 0.1s linear",
               }}
             >
-              {[...techStack, ...techStack].map((tech, index) => (
+              {visibleImages.map((tech, index) => (
                 <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
                   <Image
                     src={tech.src}
