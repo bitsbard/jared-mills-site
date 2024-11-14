@@ -130,15 +130,19 @@ const HomePage: React.FC = () => {
         {/* Tech We Use Section */}
         <section className="max-w-4xl mx-auto px-4 py-8">
           <h3 className="text-2xl font-bold mb-8 text-center">Tech We Use</h3>
-          <div className="flex justify-center items-center">
-            <img src="/python.png" alt="Python" className="mx-1" style={{ height: '50px' }} />
-            <img src="/react.png" alt="React" className="mx-1" style={{ height: '45px' }} />
-            <img src="/openai.png" alt="OpenAI" className="mx-1" style={{ height: '50px' }} />
-            <img src="/segmind.png" alt="Segmind" className="mx-1" style={{ height: '40px' }} />
-            <img src="/vercel.png" alt="Vercel" className="mx-1" style={{ height: '35px' }} />
-            <img src="/gcp.png" alt="GCP" className="mx-1" style={{ height: '40px' }} />
-            <img src="/aws.png" alt="AWS" className="mx-1" style={{ height: '45px' }} />
-            <img src="/github.png" alt="GitHub" className="mx-1" style={{ height: '50px' }} />
+          <div className="flex flex-col items-center space-y-4">
+            <div className="flex justify-between items-center w-full">
+              <img src="/python.png" alt="Python" style={{ height: '30px' }} />
+              <img src="/react.png" alt="React" style={{ height: '28px' }} />
+              <img src="/aws.png" alt="AWS" style={{ height: '26px' }} />
+              <img src="/github.png" alt="GitHub" style={{ height: '32px' }} />
+            </div>
+            <div className="flex justify-between items-center w-full">
+              <img src="/openai.png" alt="OpenAI" style={{ height: '30px' }} />
+              <img src="/segmind.png" alt="Segmind" style={{ height: '28px' }} />
+              <img src="/vercel.png" alt="Vercel" style={{ height: '24px' }} />
+              <img src="/gcp.png" alt="GCP" style={{ height: '26px' }} />
+            </div>
           </div>
         </section>
 
