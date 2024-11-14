@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Tech We Use Section */}
-        <section className="max-w-4xl mx-auto px-4 pt-8 pb-16">
+        <section className="max-w-4xl mx-auto px-4 pt-8 pb-14">
           <p className="text-xl text-gray-400 mb-4 text-center">Tech We Use</p>
           {/* Add a container with background blur */}
           <div className="bg-black bg-opacity-50 backdrop-blur-sm rounded-xl p-8">
