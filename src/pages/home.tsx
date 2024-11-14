@@ -49,7 +49,7 @@ const techStack: TechStackItem[] = [
 
 const HomePage: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
-  const scrollSpeed = 0.5; // Reduced speed for smoother animation
+  const scrollSpeed = 0.5; // Adjust this value for desired speed
 
   useEffect(() => {
     const totalWidth = techStack.reduce((acc, item) => acc + item.width + 32, 0); // Include margin
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
     const animate = () => {
       setScrollPosition((prev) => {
         const newPosition = prev - scrollSpeed;
-        return newPosition <= -totalWidth / 2 ? 0 : newPosition;
+        return newPosition <= -totalWidth ? 0 : newPosition;
       });
       animationFrameId = requestAnimationFrame(animate);
     };
