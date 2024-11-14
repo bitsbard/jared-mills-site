@@ -136,8 +136,8 @@ const HomePage: React.FC = () => {
               <img src="/react.png" alt="React" style={{ height: '52px' }} />
               <img src="/gcp.png" alt="GCP" style={{ height: '26px' }} />
               <img src="/segmind.png" alt="Segmind" style={{ height: '29px' }} />
-              <img src="/vercel.png" alt="Vercel" style={{ height: '26px' }} />
-              <img src="/openai.png" alt="OpenAI" style={{ height: '31px' }} />
+              <img src="/vercel.png" alt="Vercel" style={{ height: '25px' }} />
+              <img src="/openai.png" alt="OpenAI" style={{ height: '30px' }} />
             </div>
           </div>
         </section>
