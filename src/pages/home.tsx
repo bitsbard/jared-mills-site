@@ -129,15 +129,14 @@ const HomePage: React.FC = () => {
 
         {/* Tech We Use Section */}
         <section className="max-w-4xl mx-auto px-4 py-8">
-          <h3 className="text-2xl font-bold mb-2 text-center text-gray-400">Tech We Use</h3>
-          <p className="text-center text-sm mb-4">Cutting-edge technologies powering our solutions</p>
+          <p className="text-2xl text-gray-300 mb-4 text-center">Tech We Use</p>
           <div className="flex justify-between items-center w-full">
             <img src="/python.png" alt="Python" style={{ height: '30px' }} />
-            <img src="/react.png" alt="React" style={{ height: '28px' }} />
+            <img src="/react.png" alt="React" style={{ height: '30px' }} />
             <img src="/openai.png" alt="OpenAI" style={{ height: '30px' }} />
-            <img src="/segmind.png" alt="Segmind" style={{ height: '28px' }} />
-            <img src="/vercel.png" alt="Vercel" style={{ height: '24px' }} />
-            <img src="/gcp.png" alt="GCP" style={{ height: '26px' }} />
+            <img src="/segmind.png" alt="Segmind" style={{ height: '30px' }} />
+            <img src="/vercel.png" alt="Vercel" style={{ height: '30px' }} />
+            <img src="/gcp.png" alt="GCP" style={{ height: '30px' }} />
           </div>
         </section>
 
