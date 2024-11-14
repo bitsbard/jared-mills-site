@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Brain, Rocket, Code2, Zap, Users, Search, Check } from "lucide-react";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 
 interface TechStackItem {
