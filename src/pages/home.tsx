@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Brain, Rocket, Code2, Zap, Users, Search, Check } from "lucide-react";
 import React, { useEffect, useState, useRef } from "react";
+import { motion, useAnimationControls } from "framer-motion";
 
 interface TechStackItem {
   src: string;
@@ -48,54 +49,32 @@ const techStack: TechStackItem[] = [
 ];
 
 const HomePage: React.FC = () => {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
-  const scrollSpeed = 0.5; // Adjust this value for desired speed
+  const controls = useAnimationControls();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visibleImages, setVisibleImages] = useState<TechStackItem[]>([]);
-  const cyclesRef = useRef<number>(0);
-  const maxCycles = 100; // Number of cycles before pausing
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const animate = async () => {
+      const container = containerRef.current;
+      if (!container) return;
 
-    const containerWidth = container.offsetWidth;
-    let animationFrameId: number;
+      const totalWidth = container.scrollWidth;
+      const viewportWidth = container.offsetWidth;
 
-    const updateVisibleImages = () => {
-      const startIndex = Math.floor(scrollPosition / 100) % techStack.length;
-      const endIndex = Math.ceil((scrollPosition + containerWidth) / 100) % techStack.length;
-      
-      let newVisibleImages = [];
-      if (startIndex <= endIndex) {
-        newVisibleImages = techStack.slice(startIndex, endIndex + 1);
-      } else {
-        newVisibleImages = [...techStack.slice(startIndex), ...techStack.slice(0, endIndex + 1)];
-      }
-
-      setVisibleImages(newVisibleImages);
-    };
-
-    const animate = () => {
-      if (cyclesRef.current >= maxCycles) return;
-
-      setScrollPosition((prevPosition) => {
-        const newPosition = prevPosition + scrollSpeed;
-        if (newPosition >= techStack.length * 100) {
-          cyclesRef.current += 1;
-          return 0;
-        }
-        return newPosition;
+      await controls.start({
+        x: [-viewportWidth, -totalWidth],
+        transition: {
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          },
+        },
       });
-
-      updateVisibleImages();
-      animationFrameId = requestAnimationFrame(animate);
     };
 
-    animationFrameId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
+    animate();
+  }, [controls]);
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
@@ -206,16 +185,12 @@ const HomePage: React.FC = () => {
               description="Seamless deployment and comprehensive team training." 
             />
           </div>
-          
           <div className="relative h-16 rounded-lg overflow-hidden" ref={containerRef}>
-            <div
+            <motion.div
               className="absolute flex items-center space-x-8 py-4"
-              style={{
-                transform: `translateX(${-scrollPosition}px)`,
-                transition: "transform 0.1s linear",
-              }}
+              animate={controls}
             >
-              {visibleImages.map((tech, index) => (
+              {[...techStack, ...techStack].map((tech, index) => (
                 <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
                   <Image
                     src={tech.src}
@@ -226,7 +201,7 @@ const HomePage: React.FC = () => {
                   />
                 </div>
               ))}
-            </div>
+            </motion.div>
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
           </div>
