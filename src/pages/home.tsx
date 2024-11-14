@@ -134,8 +134,8 @@ const HomePage: React.FC = () => {
           <div className="bg-black bg-opacity-50 backdrop-blur-sm rounded-xl p-8">
             <div className="flex justify-between items-center w-full">
               <img src="/react.png" alt="React" style={{ height: '52px' }} />
-              <img src="/gcp.png" alt="GCP" style={{ height: '26px' }} />
               <img src="/segmind.png" alt="Segmind" style={{ height: '29px' }} />
+              <img src="/gcp.png" alt="GCP" style={{ height: '27px' }} />
               <img src="/vercel.png" alt="Vercel" style={{ height: '25px' }} />
               <img src="/openai.png" alt="OpenAI" style={{ height: '30px' }} />
             </div>
