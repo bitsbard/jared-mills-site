@@ -1,54 +1,74 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  Brain, 
-  Rocket, 
-  Code2, 
-  Zap, 
-  Users, 
-  Search,
-  Check
-} from 'lucide-react';
-import React from 'react';
+import { Brain, Rocket, Code2, Zap, Users, Search, Check } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
 
 const HomePage: React.FC = () => {
+  const logos = [
+    { src: "/python.png", alt: "Python", height: 75 },
+    { src: "/react.png", alt: "React", height: 60 },
+    { src: "/aws.png", alt: "AWS", height: 50 },
+    { src: "/vercel.png", alt: "Vercel", height: 40 },
+    { src: "/openai.png", alt: "OpenAI", height: 70 },
+    { src: "/segmind.png", alt: "Segmind", height: 55 },
+    { src: "/gcp.png", alt: "GCP", height: 45 },
+    { src: "/github.png", alt: "GitHub", height: 65 },
+  ];
+
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const logoWidth = 190; // Logo width + margin
+    let position = 0;
+
+    const animate = () => {
+      position -= 1; // Adjust speed here
+      track.style.transform = `translateX(${position}px)`;
+
+      if (position <= -logoWidth) {
+        position += logoWidth;
+        track.appendChild(track.firstElementChild as Node);
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  }, []);
+
+  const renderLogos = () => {
+    const cloneCount = Math.ceil(window.innerWidth / 190);
+    const allLogos = [...logos, ...Array(cloneCount).fill(logos).flat()];
+    
+    return allLogos.map((logo, index) => (
+      <div key={index} className="logo-item">
+        <Image src={logo.src} alt={logo.alt} width={150} height={logo.height} style={{ height: `${logo.height}px`, width: 'auto' }} />
+      </div>
+    ));
+  };
+
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
         <div className="hidden md:block w-full h-full">
-          <Image
-            src="/algorism_background.jpg"
-            alt="Neural Network Background"
-            layout="fill"
-            className="object-cover z-0 opacity-80"
-            priority
-          />
+          <Image src="/algorism_background.jpg" alt="Neural Network Background" layout="fill" className="object-cover z-0 opacity-80" priority />
         </div>
       </div>
 
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
-          <Image
-            src="/algorism.png"
-            alt="Algorism Logo"
-            width={75}
-            height={20}
-            className="object-contain"
-          />
+          <Image src="/algorism.png" alt="Algorism Logo" width={75} height={20} className="object-contain" />
         </Link>
-        
         <nav className="flex items-center space-x-8">
           <Link href="/our-work" className="text-white hover:font-bold transition-all">
             Our Work
           </Link>
-          <Link 
-            href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" 
-            className="text-white hover:font-bold transition-all"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
+          <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
             Schedule Meeting
           </Link>
         </nav>
@@ -61,46 +81,15 @@ const HomePage: React.FC = () => {
           <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
             From concept to deployment, we build cutting-edge generative AI solutions that transform business productivity.
           </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <FeatureCard 
-              icon={<Brain />} 
-              title="AI-First Development" 
-              description="Custom generative AI image, video, audio, and text systems tailored to your needs" 
-            />
-            <FeatureCard 
-              icon={<Rocket />} 
-              title="Swift Deployment" 
-              description="Full-stack AI solutions ready for market in 3-4 weeks" 
-            />
-            <FeatureCard 
-              icon={<Code2 />} 
-              title="End-to-End Solution" 
-              description="From UI/UX to backend infrastructure and AI model deployment" 
-            />
-            <FeatureCard 
-              icon={<Zap />} 
-              title="Cutting-Edge Tech" 
-              description="Latest in AI/ML, including GPT-4, Claude, and open-source models" 
-            />
-            <FeatureCard 
-              icon={<Users />} 
-              title="AI Experts" 
-              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products" 
-            />
-            <FeatureCard 
-              icon={<Search />} 
-              title="Data-Driven" 
-              description="Analytics integration and A/B testing for continuous improvement" 
-            />
+            <FeatureCard icon={<Brain />} title="AI-First Development" description="Custom generative AI image, video, audio, and text systems tailored to your needs" />
+            <FeatureCard icon={<Rocket />} title="Swift Deployment" description="Full-stack AI solutions ready for market in 3-4 weeks" />
+            <FeatureCard icon={<Code2 />} title="End-to-End Solution" description="From UI/UX to backend infrastructure and AI model deployment" />
+            <FeatureCard icon={<Zap />} title="Cutting-Edge Tech" description="Latest in AI/ML, including GPT-4, Claude, and open-source models" />
+            <FeatureCard icon={<Users />} title="AI Experts" description="Team of ML engineers and full-stack developers who've built successful AI products" />
+            <FeatureCard icon={<Search />} title="Data-Driven" description="Analytics integration and A/B testing for continuous improvement" />
           </div>
-
-          <Link 
-            href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
-            className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold" target="_blank" rel="noopener noreferrer">
             Book a Call
           </Link>
         </section>
@@ -109,21 +98,21 @@ const HomePage: React.FC = () => {
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <ProcessStep 
-              number={1} 
-              title="Discovery & Design" 
-              description="We analyze your needs and design an AI solution architecture." 
-            />
-            <ProcessStep 
-              number={2} 
-              title="AI Development" 
-              description="Rapid prototyping and iterative development with regular demos." 
-            />
-            <ProcessStep 
-              number={3} 
-              title="Deployment & Training" 
-              description="Seamless deployment and comprehensive team training." 
-            />
+            <ProcessStep number={1} title="Discovery & Design" description="We analyze your needs and design an AI solution architecture." />
+            <ProcessStep number={2} title="AI Development" description="Rapid prototyping and iterative development with regular demos." />
+            <ProcessStep number={3} title="Deployment & Training" description="Seamless deployment and comprehensive team training." />
+          </div>
+        </section>
+
+        {/* Logo Carousel Section */}
+        <section className="max-w-full mx-auto py-16 relative">
+          <h2 className="text-4xl font-bold mb-12 text-center">Technologies We Use</h2>
+          <div className="logo-carousel">
+            <div className="carousel-container">
+              <div ref={trackRef} className="carousel-track">
+                {renderLogos()}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -132,14 +121,9 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hi I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
+              Hi I'm Stuart. With years in AI and machine learning I've seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
             </p>
-            <Link 
-              href="https://x.com/stuartxmills" 
-              className="inline-flex items-center px-4 py-2 bg-black bg-opacity-50 rounded-full border border-gray-700 hover:border-[#08c0e5] transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://x.com/stuartxmills" className="inline-flex items-center px-4 py-2 bg-black bg-opacity-50 rounded-full border border-gray-700 hover:border-[#08c0e5] transition-colors" target="_blank" rel="noopener noreferrer">
               <span className="text-sm font-medium">
                 Follow on 𝕏<span className="ml-2">@stuartxmills</span>
               </span>
@@ -151,9 +135,9 @@ const HomePage: React.FC = () => {
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <ServiceCard 
-              title="AI Consulting" 
-              price="$200" 
+            <ServiceCard
+              title="AI Consulting"
+              price="$200"
               description="Strategic AI integration planning, use case identification, and implementation roadmap."
               features={[
                 "AI readiness assessment",
@@ -162,9 +146,9 @@ const HomePage: React.FC = () => {
                 "Risk mitigation planning"
               ]}
             />
-            <ServiceCard 
-              title="AI Development" 
-              price="$150" 
+            <ServiceCard
+              title="AI Development"
+              price="$150"
               description="Full-stack AI solution development with state-of-the-art models and technologies."
               features={[
                 "Image, video, or audio generative models",
@@ -175,12 +159,7 @@ const HomePage: React.FC = () => {
             />
           </div>
           <div className="text-center">
-            <Link 
-              href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
-              className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold" target="_blank" rel="noopener noreferrer">
               Book a Call
             </Link>
           </div>
@@ -191,13 +170,7 @@ const HomePage: React.FC = () => {
       <footer className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-            <Image
-              src="/algorism.png"
-              alt="Algorism Logo"
-              width={60}
-              height={16}
-              className="object-contain"
-            />
+            <Image src="/algorism.png" alt="Algorism Logo" width={60} height={16} className="object-contain" />
             <p className="text-white text-center md:text-left">
               <strong>Transform your idea into an AI app in weeks</strong>
             </p>
@@ -207,6 +180,53 @@ const HomePage: React.FC = () => {
           </p>
         </div>
       </footer>
+
+      <style jsx>{`
+        .logo-carousel {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .carousel-container {
+          width: 100%;
+          padding: 20px 0;
+        }
+
+        .carousel-track {
+          display: flex;
+          transition: transform 0.5s ease;
+        }
+
+        .logo-item {
+          flex-shrink: 0;
+          width: 150px;
+          margin: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .logo-carousel::before,
+        .logo-carousel::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100px;
+          z-index: 2;
+        }
+
+        .logo-carousel::before {
+          left: 0;
+          background: linear-gradient(to right, #000000, transparent);
+        }
+
+        .logo-carousel::after {
+          right: 0;
+          background: linear-gradient(to left, #000000, transparent);
+        }
+      `}</style>
     </div>
   );
 };
