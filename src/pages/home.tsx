@@ -52,13 +52,13 @@ const HomePage: React.FC = () => {
   const scrollSpeed = 0.5; // Adjust this value for desired speed
 
   useEffect(() => {
-    const totalWidth = techStack.reduce((acc, item) => acc + item.width + 32, 0); // Include margin
+    const containerWidth = techStack.reduce((acc, item) => acc + item.width + 32, 0); // Include margin
     let animationFrameId: number;
 
     const animate = () => {
       setScrollPosition((prev) => {
-        const newPosition = prev - scrollSpeed;
-        return newPosition <= -totalWidth ? 0 : newPosition;
+        const newPosition = (prev - scrollSpeed) % containerWidth;
+        return newPosition < 0 ? newPosition + containerWidth : newPosition;
       });
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -182,12 +182,12 @@ const HomePage: React.FC = () => {
             <div
               className="absolute flex items-center space-x-8 py-4"
               style={{
-                transform: `translateX(${scrollPosition}px)`,
+                transform: `translateX(${-scrollPosition}px)`,
                 transition: "transform 0.1s linear",
                 width: `${techStack.length * 200}px`, // Adjust based on your needs
               }}
             >
-              {[...techStack, ...techStack].map((tech, index) => (
+              {[...techStack, ...techStack, ...techStack].map((tech, index) => (
                 <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
                   <Image
                     src={tech.src}
