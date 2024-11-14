@@ -128,11 +128,10 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Tech We Use Section */}
-        <section className="max-w-4xl mx-auto px-4 py-16">
+        <section className="max-w-4xl mx-auto px-4 pt-8 pb-16">
           <p className="text-xl text-gray-400 mb-4 text-center">Tech We Use</p>
           <div className="flex justify-between items-center w-full">
-            <img src="/python.png" alt="Python" style={{ height: '32px' }} />
-            <img src="/react.png" alt="React" style={{ height: '40px' }} />
+            <img src="/react.png" alt="React" style={{ height: '44px' }} />
             <img src="/openai.png" alt="OpenAI" style={{ height: '31px' }} />
             <img src="/segmind.png" alt="Segmind" style={{ height: '29px' }} />
             <img src="/vercel.png" alt="Vercel" style={{ height: '26px' }} />
