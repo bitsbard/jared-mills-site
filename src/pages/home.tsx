@@ -129,7 +129,8 @@ const HomePage: React.FC = () => {
 
         {/* Tech We Use Section */}
         <section className="max-w-4xl mx-auto px-4 py-8">
-          <p className="text-2xl text-gray-300 mb-4 text-center">Tech We Use</p>
+          {/* Adjusted padding to match spacing */}
+          <p className="text-xl text-gray-300 mb-4 text-center">Tech We Use</p>
           <div className="flex justify-between items-center w-full">
             <img src="/python.png" alt="Python" style={{ height: '30px' }} />
             <img src="/react.png" alt="React" style={{ height: '30px' }} />
