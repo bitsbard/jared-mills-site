@@ -1,20 +1,70 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { 
-  Brain, 
-  Rocket, 
-  Code2, 
-  Zap, 
-  Users, 
-  Search,
-  Check
-} from 'lucide-react';
-import React from 'react';
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { Brain, Rocket, Code2, Zap, Users, Search, Check } from "lucide-react";
+import React, { useEffect, useState } from "react";
+
+interface TechStackItem {
+  src: string;
+  alt: string;
+}
+
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface ProcessStepProps {
+  number: number;
+  title: string;
+  description: string;
+}
+
+interface ServiceCardProps {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+}
+
+interface TechStackItem {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+const techStack: TechStackItem[] = [
+  { src: "/python.png", alt: "Python", width: 60, height: 60 },
+  { src: "/react.png", alt: "React", width: 55, height: 55 },
+  { src: "/aws.png", alt: "AWS", width: 65, height: 65 },
+  { src: "/vercel.png", alt: "Vercel", width: 50, height: 50 },
+  { src: "/openai.png", alt: "OpenAI", width: 70, height: 70 },
+  { src: "/segmind.png", alt: "Segmind", width: 60, height: 60 },
+  { src: "/gcp.png", alt: "GCP", width: 58, height: 58 },
+  { src: "/github.png", alt: "GitHub", width: 55, height: 55 }
+];
 
 const HomePage: React.FC = () => {
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const scrollSpeed = 1;
+  const scrollWidth = techStack.length * 100;
+
+  useEffect(() => {
+    const scrollInterval = setInterval(() => {
+      setScrollPosition((prev) => {
+        const newPosition = prev - scrollSpeed;
+        return newPosition <= -scrollWidth ? 0 : newPosition;
+      });
+    }, 30);
+
+    return () => clearInterval(scrollInterval);
+  }, [scrollWidth]);
+
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
-      {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
         <div className="hidden md:block w-full h-full">
           <Image
@@ -27,7 +77,6 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
           <Image
@@ -54,7 +103,6 @@ const HomePage: React.FC = () => {
         </nav>
       </header>
 
-      {/* Main content */}
       <main className="relative z-10 mt-16">
         <section className="max-w-4xl mx-auto px-4 py-16 text-center">
           <h1 className="text-6xl font-bold mb-6">Power Your Business with AI</h1>
@@ -105,10 +153,9 @@ const HomePage: React.FC = () => {
           </Link>
         </section>
 
-        {/* Process Section */}
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-16">
             <ProcessStep 
               number={1} 
               title="Discovery & Design" 
@@ -125,9 +172,33 @@ const HomePage: React.FC = () => {
               description="Seamless deployment and comprehensive team training." 
             />
           </div>
+          
+          <div className="relative h-16 rounded-lg overflow-hidden">
+            <div 
+              className="absolute flex items-center space-x-8 py-4"
+              style={{
+                transform: `translateX(${scrollPosition}px)`,
+                transition: "transform 30ms linear",
+                width: `${scrollWidth * 2}px`
+              }}
+            >
+              {[...techStack, ...techStack].map((tech, index) => (
+                <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
+                  <Image
+                    src={tech.src}
+                    alt={tech.alt}
+                    width={tech.width}  // Custom width for each image
+                    height={tech.height}  // Custom height for each image
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+          </div>
         </section>
 
-        {/* Founder Section */}
         <section className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
@@ -147,7 +218,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Section */}
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -187,7 +257,6 @@ const HomePage: React.FC = () => {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
@@ -211,12 +280,6 @@ const HomePage: React.FC = () => {
   );
 };
 
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
   <div className="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800">
     <div className="text-4xl mb-4 text-[#08c0e5] flex justify-center">{icon}</div>
@@ -224,12 +287,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
     <p className="text-gray-400">{description}</p>
   </div>
 );
-
-interface ProcessStepProps {
-  number: number;
-  title: string;
-  description: string;
-}
 
 const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description }) => (
   <div className="text-center mb-8 md:mb-0 p-6 rounded-lg relative z-10">
@@ -240,13 +297,6 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description })
     <p className="text-gray-400">{description}</p>
   </div>
 );
-
-interface ServiceCardProps {
-  title: string;
-  price: string;
-  description: string;
-  features: string[];
-}
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, description, features }) => (
   <div className="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800">
