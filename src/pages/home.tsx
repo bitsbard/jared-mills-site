@@ -2,18 +2,34 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  Brain, 
-  Rocket, 
-  Code2, 
-  Zap, 
-  Users, 
-  Search,
-  Check
-} from 'lucide-react';
+import { Brain, Rocket, Code2, Zap, Users, Search, Check } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-const techStack = [
+interface TechStackItem {
+  src: string;
+  alt: string;
+}
+
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface ProcessStepProps {
+  number: number;
+  title: string;
+  description: string;
+}
+
+interface ServiceCardProps {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+}
+
+const techStack: TechStackItem[] = [
   { src: '/javascript.png', alt: 'JavaScript' },
   { src: '/typescript.png', alt: 'TypeScript' },
   { src: '/python.png', alt: 'Python' },
@@ -32,14 +48,20 @@ const techStack = [
 ];
 
 const HomePage: React.FC = () => {
-  const [position, setPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const scrollSpeed = 1;
+  const scrollWidth = techStack.length * 100;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition(prev => (prev - 1) % (techStack.length * 100));
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
+    const scrollInterval = setInterval(() => {
+      setScrollPosition((prev) => {
+        const newPosition = prev - scrollSpeed;
+        return newPosition <= -scrollWidth ? 0 : newPosition;
+      });
+    }, 30);
+
+    return () => clearInterval(scrollInterval);
+  }, [scrollWidth]);
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
@@ -112,7 +134,7 @@ const HomePage: React.FC = () => {
             <FeatureCard 
               icon={<Users />} 
               title="AI Experts" 
-              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products" 
+              description="Team of ML engineers and full-stack developers who've built successful AI products" 
             />
             <FeatureCard 
               icon={<Search />} 
@@ -133,7 +155,7 @@ const HomePage: React.FC = () => {
 
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-16">
             <ProcessStep 
               number={1} 
               title="Discovery & Design" 
@@ -151,16 +173,17 @@ const HomePage: React.FC = () => {
             />
           </div>
           
-          <div className="w-full overflow-hidden mt-16 relative">
+          <div className="relative h-16 bg-black bg-opacity-50 rounded-lg overflow-hidden">
             <div 
-              className="flex items-center whitespace-nowrap"
+              className="absolute flex items-center space-x-8 py-4"
               style={{
-                transform: `translateX(${position}px)`,
-                transition: 'transform 50ms linear'
+                transform: `translateX(${scrollPosition}px)`,
+                transition: 'transform 30ms linear',
+                width: `${scrollWidth * 2}px`
               }}
             >
               {[...techStack, ...techStack].map((tech, index) => (
-                <div key={`${tech.alt}-${index}`} className="mx-4">
+                <div key={`${tech.alt}-${index}`} className="flex-shrink-0">
                   <Image
                     src={tech.src}
                     alt={tech.alt}
@@ -171,8 +194,8 @@ const HomePage: React.FC = () => {
                 </div>
               ))}
             </div>
-            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
           </div>
         </section>
 
@@ -180,7 +203,7 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hi I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
+              Hi I'm Stuart. With years in AI and machine learning I've seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
             </p>
             <Link 
               href="https://x.com/stuartxmills" 
@@ -257,12 +280,6 @@ const HomePage: React.FC = () => {
   );
 };
 
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
   <div className="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800">
     <div className="text-4xl mb-4 text-[#08c0e5] flex justify-center">{icon}</div>
@@ -270,12 +287,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
     <p className="text-gray-400">{description}</p>
   </div>
 );
-
-interface ProcessStepProps {
-  number: number;
-  title: string;
-  description: string;
-}
 
 const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description }) => (
   <div className="text-center mb-8 md:mb-0 p-6 rounded-lg relative z-10">
@@ -286,13 +297,6 @@ const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description })
     <p className="text-gray-400">{description}</p>
   </div>
 );
-
-interface ServiceCardProps {
-  title: string;
-  price: string;
-  description: string;
-  features: string[];
-}
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, description, features }) => (
   <div className="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800">
