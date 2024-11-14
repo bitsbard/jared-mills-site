@@ -1,20 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  Brain, 
-  Rocket, 
-  Code2, 
-  Zap, 
-  Users, 
-  Search,
-  Check
-} from 'lucide-react';
+import { Brain, Rocket, Code2, Zap, Users, Search, Check } from 'lucide-react';
 import React from 'react';
 
 const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
-      {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
         <div className="hidden md:block w-full h-full">
           <Image
@@ -27,34 +18,22 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="flex items-center">
-          <Image
-            src="/algorism.png"
-            alt="Algorism Logo"
-            width={75}
-            height={20}
-            className="object-contain"
-          />
+          <Image src="/algorism.png" alt="Algorism Logo" width={75} height={20} className="object-contain" />
         </Link>
         
         <nav className="flex items-center space-x-8">
-          <Link href="/our-work" className="text-white hover:font-bold transition-all">
-            Our Work
-          </Link>
+          <Link href="/our-work" className="text-white hover:font-bold transition-all">Our Work</Link>
           <Link 
             href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" 
             className="text-white hover:font-bold transition-all"
             target="_blank" 
             rel="noopener noreferrer"
-          >
-            Schedule Meeting
-          </Link>
+          >Schedule Meeting</Link>
         </nav>
       </header>
 
-      {/* Main content */}
       <main className="relative z-10 mt-16">
         <section className="max-w-4xl mx-auto px-4 py-16 text-center">
           <h1 className="text-6xl font-bold mb-6">Power Your Business with AI</h1>
@@ -63,36 +42,12 @@ const HomePage: React.FC = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <FeatureCard 
-              icon={<Brain />} 
-              title="AI-First Development" 
-              description="Custom generative AI image, video, audio, and text systems tailored to your needs" 
-            />
-            <FeatureCard 
-              icon={<Rocket />} 
-              title="Swift Deployment" 
-              description="Full-stack AI solutions ready for market in 3-4 weeks" 
-            />
-            <FeatureCard 
-              icon={<Code2 />} 
-              title="End-to-End Solution" 
-              description="From UI/UX to backend infrastructure and AI model deployment" 
-            />
-            <FeatureCard 
-              icon={<Zap />} 
-              title="Cutting-Edge Tech" 
-              description="Latest in AI/ML, including GPT-4, Claude, and open-source models" 
-            />
-            <FeatureCard 
-              icon={<Users />} 
-              title="AI Experts" 
-              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products" 
-            />
-            <FeatureCard 
-              icon={<Search />} 
-              title="Data-Driven" 
-              description="Analytics integration and A/B testing for continuous improvement" 
-            />
+            <FeatureCard icon={<Brain />} title="AI-First Development" description="Custom generative AI image, video, audio, and text systems tailored to your needs" />
+            <FeatureCard icon={<Rocket />} title="Swift Deployment" description="Full-stack AI solutions ready for market in 3-4 weeks" />
+            <FeatureCard icon={<Code2 />} title="End-to-End Solution" description="From UI/UX to backend infrastructure and AI model deployment" />
+            <FeatureCard icon={<Zap />} title="Cutting-Edge Tech" description="Latest in AI/ML, including GPT-4, Claude, and open-source models" />
+            <FeatureCard icon={<Users />} title="AI Experts" description="Team of ML engineers and full-stack developers who've built successful AI products" />
+            <FeatureCard icon={<Search />} title="Data-Driven" description="Analytics integration and A/B testing for continuous improvement" />
           </div>
 
           <Link 
@@ -100,39 +55,35 @@ const HomePage: React.FC = () => {
             className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            Book a Call
-          </Link>
+          >Book a Call</Link>
         </section>
 
-        {/* Process Section */}
-        <section className="max-w-4xl mx-auto px-4 py-16">
-          <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <ProcessStep 
-              number={1} 
-              title="Discovery & Design" 
-              description="We analyze your needs and design an AI solution architecture." 
-            />
-            <ProcessStep 
-              number={2} 
-              title="AI Development" 
-              description="Rapid prototyping and iterative development with regular demos." 
-            />
-            <ProcessStep 
-              number={3} 
-              title="Deployment & Training" 
-              description="Seamless deployment and comprehensive team training." 
-            />
+        <section className="max-w-4xl mx-auto px-4 py-12 border-t border-b border-gray-800 relative">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Tech We Use</h2>
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10"></div>
+            <div className="flex space-x-12 animate-scroll">
+              <TechStack />
+              <TechStack />
+            </div>
           </div>
         </section>
 
-        {/* Founder Section */}
+        <section className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <ProcessStep number={1} title="Discovery & Design" description="We analyze your needs and design an AI solution architecture." />
+            <ProcessStep number={2} title="AI Development" description="Rapid prototyping and iterative development with regular demos." />
+            <ProcessStep number={3} title="Deployment & Training" description="Seamless deployment and comprehensive team training." />
+          </div>
+        </section>
+
         <section className="max-w-4xl mx-auto px-4 py-16">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hi I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
+              Hi I'm Stuart. With years in AI and machine learning I've seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
             </p>
             <Link 
               href="https://x.com/stuartxmills" 
@@ -140,14 +91,11 @@ const HomePage: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="text-sm font-medium">
-                Follow on 𝕏<span className="ml-2">@stuartxmills</span>
-              </span>
+              <span className="text-sm font-medium">Follow on 𝕏<span className="ml-2">@stuartxmills</span></span>
             </Link>
           </div>
         </section>
 
-        {/* Services Section */}
         <section className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -180,33 +128,58 @@ const HomePage: React.FC = () => {
               className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              Book a Call
-            </Link>
+            >Book a Call</Link>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-            <Image
-              src="/algorism.png"
-              alt="Algorism Logo"
-              width={60}
-              height={16}
-              className="object-contain"
-            />
+            <Image src="/algorism.png" alt="Algorism Logo" width={60} height={16} className="object-contain" />
             <p className="text-white text-center md:text-left">
               <strong>Transform your idea into an AI app in weeks</strong>
             </p>
           </div>
-          <p className="text-center text-gray-400">
-            © 2024 Algorism LLC. All rights reserved.
-          </p>
+          <p className="text-center text-gray-400">© 2024 Algorism LLC. All rights reserved.</p>
         </div>
       </footer>
+    </div>
+  );
+};
+
+const TechStack: React.FC = () => {
+  const techList = [
+    { name: 'python', size: 40 },
+    { name: 'javascript', size: 40 },
+    { name: 'typescript', size: 40 },
+    { name: 'react', size: 40 },
+    { name: 'node', size: 40 },
+    { name: 'aws', size: 40 },
+    { name: 'postgresql', size: 40 },
+    { name: 'vercel', size: 40 },
+    { name: 'github', size: 40 },
+    { name: 'tensorflow', size: 40 },
+    { name: 'openai', size: 40 },
+    { name: 'segmind', size: 40 },
+    { name: 'gcp', size: 40 },
+    { name: 'llama', size: 40 },
+    { name: 'hotjar', size: 40 }
+  ];
+
+  return (
+    <div className="flex space-x-12">
+      {techList.map((tech) => (
+        <div key={tech.name} className="flex-shrink-0">
+          <Image
+            src={`/${tech.name}.png`}
+            alt={`${tech.name} logo`}
+            width={tech.size}
+            height={tech.size}
+            className="object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+          />
+        </div>
+      ))}
     </div>
   );
 };
