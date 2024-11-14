@@ -106,7 +106,7 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Process Section */}
-        <section className="max-w-4xl mx-auto px-4 py-16">
+        <section className="max-w-4xl mx-auto px-4 pb-8 pt-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <ProcessStep 
@@ -128,9 +128,8 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* Tech We Use Section */}
-        <section className="max-w-4xl mx-auto px-4 py-8">
-          {/* Adjusted padding to match spacing */}
-          <p className="text-xl text-gray-300 mb-4 text-center">Tech We Use</p>
+        <section className="max-w-4xl mx-auto px-4 pt-4 pb-8">
+          <p className="text-xl text-gray-400 mb-4 text-center">Tech We Use</p>
           <div className="flex justify-between items-center w-full">
             <img src="/python.png" alt="Python" style={{ height: '30px' }} />
             <img src="/react.png" alt="React" style={{ height: '30px' }} />
