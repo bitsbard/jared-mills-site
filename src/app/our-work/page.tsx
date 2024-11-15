@@ -92,12 +92,6 @@ export default function OurWorkPage() {
               imageUrl="/project2.png"
               projectUrl="https://www.thankjohn.com/?ref=algorism"
             />
-            <ProjectCard
-              title="FieldSync"
-              description="AI-powered equipment documentation for efficient maintenance"
-              imageUrl="/project3.png"
-              projectUrl="https://fieldsync.unicornplatform.page/"
-            />
           </div>
 
           <div className="text-left py-16">
