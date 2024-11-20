@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 const SITE_URL = 'https://algorism.co'
-const SOCIAL_IMAGE = `${SITE_URL}/algorism_social_bg.png`
+const SOCIAL_IMAGE = `${SITE_URL}/algorism_banner.png`
 
 // Long-form description for places where space permits
 const FULL_DESCRIPTION = 'Transform your business with cutting-edge AI development. Our expertise is in generative AI which includes LLM integration, RAG systems, Stable Diffusion implementation, text-to-speech (TTS), Runway video generation, chatbots and custom AI applications. We deliver fast MVP development and seamless AI solutions for enterprises and startups.'
