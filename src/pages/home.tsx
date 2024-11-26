@@ -218,7 +218,7 @@ const HomePage: React.FC = () => {
             </p>
           </div>
           <p className="text-center text-gray-400">
-            © 2024 Algorism LLC. All rights reserved.
+            © 2024 Algorism. All rights reserved.
           </p>
         </div>
       </footer>
