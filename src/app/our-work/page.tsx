@@ -93,10 +93,10 @@ export default function OurWorkPage() {
               projectUrl="https://www.thankjohn.com/?ref=algorism"
             />
             <ProjectCard
-              title="FieldSync"
-              description="AI-powered equipment documentation for efficient maintenance"
+              title="ContextReply"
+              description="AI-powered email and employee assistant"
               imageUrl="/project3.png"
-              projectUrl="https://fieldsync.unicornplatform.page/"
+              projectUrl="https://www.contextreply.com/?ref=algorism"
             />
           </div>
 
