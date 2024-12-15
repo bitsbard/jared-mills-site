@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
             Our Work
           </Link>
           <Link 
-            href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" 
+            href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6" 
             className="text-white hover:font-bold transition-all"
             target="_blank" 
             rel="noopener noreferrer"
@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <Link 
-            href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
+            href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6"
             className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
             target="_blank"
             rel="noopener noreferrer"
@@ -191,7 +191,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="text-center">
             <Link 
-              href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
+              href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6"
               className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"

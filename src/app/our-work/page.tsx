@@ -64,7 +64,7 @@ export default function OurWorkPage() {
           <Link href="/our-work" className="text-white hover:font-bold transition-all">
             Our Work
           </Link>
-          <Link href="https://calendar.app.google/e9nTLXZvwe4vFtRg8" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
+          <Link href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6" className="text-white hover:font-bold transition-all" target="_blank" rel="noopener noreferrer">
             Schedule Meeting
           </Link>
         </nav>
@@ -104,7 +104,7 @@ export default function OurWorkPage() {
             <h3 className="text-3xl font-bold mb-4">Want To Be Next?</h3>
             <p className="text-xl text-gray-400 mb-8">Let&apos;s talk and see if we can make it happen.</p>
             <Link 
-              href="https://calendar.app.google/e9nTLXZvwe4vFtRg8"
+              href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6"
               className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
