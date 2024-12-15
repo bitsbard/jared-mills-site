@@ -90,7 +90,7 @@ export default function OurWorkPage() {
               title="Thank John"
               description="AI tool directory platform with semantic search"
               imageUrl="/project2.png"
-              projectUrl="https://www.thankjohn.com/?ref=algorism"
+              projectUrl="https://thank-john-test.vercel.app/?ref=algorism"
             />
             <ProjectCard
               title="ContextReply"
