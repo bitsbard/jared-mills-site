@@ -89,6 +89,37 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
+        {/* Projects Section */}
+        <section id="projects" className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ProjectCard 
+              title="Book Generator"
+              description="Open Source Book Generator Script - A tool for automated book content generation and formatting"
+              tech={["Python", "NLP", "Content Generation"]}
+              link="https://github.com/bitsbard/bookGenerator"
+            />
+            <ProjectCard 
+              title="Weather Data Integration"
+              description="End-to-end ETL pipeline that extracts weather data, transforms it, and loads it into a PostgreSQL database"
+              tech={["Python", "PostgreSQL", "ETL", "Data Pipeline"]}
+              link="https://github.com/bitsbard/weather-data-integration"
+            />
+            <ProjectCard 
+              title="Stock Price Predictor GAN"
+              description="A stock price prediction model using technical indicators, ARIMA, LSTM, and GAN"
+              tech={["Python", "LSTM", "GAN", "ARIMA"]}
+              link="https://github.com/bitsbard/stock-price-predictor-gan"
+            />
+            <ProjectCard 
+              title="Realtime Social Data Pipeline"
+              description="Production-grade pipeline for ingesting, processing, and analyzing social media data in real-time"
+              tech={["Python", "Real-time Processing", "Data Analytics"]}
+              link="https://github.com/bitsbard/realtime-social-data-pipeline"
+            />
+          </div>
+        </section>
+
         {/* Skills Section */}
         <section id="skills" className="max-w-4xl mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-12 text-center">Technical Skills</h2>
@@ -112,37 +143,6 @@ const HomePage: React.FC = () => {
               icon={<Terminal />} 
               title="Tools" 
               skills={["Git", "Docker", "AWS", "Linux"]} 
-            />
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="max-w-4xl mx-auto px-4 py-16">
-          <h2 className="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ProjectCard 
-              title="Project 1"
-              description="A full-stack web application built with React, Node.js, and PostgreSQL"
-              tech={["React", "Node.js", "PostgreSQL"]}
-              link="https://github.com/yourusername/project1"
-            />
-            <ProjectCard 
-              title="Project 2"
-              description="Real-time data visualization dashboard using D3.js and WebSocket"
-              tech={["D3.js", "WebSocket", "Express"]}
-              link="https://github.com/yourusername/project2"
-            />
-            <ProjectCard 
-              title="Project 3"
-              description="Mobile-first e-commerce platform with payment integration"
-              tech={["Next.js", "Stripe", "MongoDB"]}
-              link="https://github.com/yourusername/project3"
-            />
-            <ProjectCard 
-              title="Project 4"
-              description="Cloud-based task management system with real-time updates"
-              tech={["React", "Firebase", "Material-UI"]}
-              link="https://github.com/yourusername/project4"
             />
           </div>
         </section>
