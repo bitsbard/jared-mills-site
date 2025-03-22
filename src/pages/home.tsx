@@ -50,15 +50,34 @@ const HomePage: React.FC = () => {
       {/* Main content */}
       <main className="relative z-10 mt-16">
         {/* Hero Section */}
-        <section className="max-w-4xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-6xl font-bold mb-6">Software Engineer</h1>
-          <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Building scalable and high-quality software products
-          </p>
-          <div className="flex justify-center space-x-6">
-            <SocialLink href="https://github.com/bitsbard" icon={<Github />} label="GitHub" />
-            <SocialLink href="https://www.linkedin.com/in/jaredxmills/" icon={<Linkedin />} label="LinkedIn" />
-            <SocialLink href="mailto:jaredxmills@gmail.com" icon={<Mail />} label="Email" />
+        <section className="max-w-4xl mx-auto px-4 py-16">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            {/* Profile Image */}
+            <div className="w-64 h-64 relative">
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <Image
+                  src="/Profile.jpg"
+                  alt="Jared Mills"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-6xl font-bold mb-6">Software Engineer</h1>
+              <p className="text-2xl text-gray-300 mb-12 max-w-3xl">
+                Building scalable and high-quality software products
+              </p>
+              <div className="flex justify-center md:justify-start space-x-6">
+                <SocialLink href="https://github.com/bitsbard" icon={<Github />} label="GitHub" />
+                <SocialLink href="https://www.linkedin.com/in/jaredxmills/" icon={<Linkedin />} label="LinkedIn" />
+                <SocialLink href="mailto:jaredxmills@gmail.com" icon={<Mail />} label="Email" />
+              </div>
+            </div>
           </div>
         </section>
 
