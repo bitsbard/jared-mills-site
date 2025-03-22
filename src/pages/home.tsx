@@ -97,7 +97,13 @@ const HomePage: React.FC = () => {
               title="BrightlyLoop"
               description="AI-powered platform that helps businesses create culturally relevant, accessible, and optimized user experiences for global markets through specialized chatbots and UX research tools"
               tech={["Next.js", "RAG", "AI Routing", "Firebase", "Cloud Run", "Docker", "Firestore"]}
-              link="https://brightlyloop.com"
+              link="https://brightlyloop.ai"
+            />
+            <ProjectCard 
+              title="ContextReply"
+              description="AI-powered email response system that generates personalized, context-aware email replies by integrating with Gmail's API and leveraging users' business data to maintain communication consistency"
+              tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search"]}
+              link="https://contextreply.com"
             />
             <ProjectCard 
               title="Weather Data Integration"
