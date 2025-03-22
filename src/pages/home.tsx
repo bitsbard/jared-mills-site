@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  Brain, 
-  Rocket, 
-  Code2, 
-  Zap, 
-  Users, 
-  Search,
-  Check
+  Code,
+  Github,
+  Linkedin,
+  Mail,
+  Terminal,
+  Layout,
+  Database,
+  Server
 } from 'lucide-react';
 import React from 'react';
 
@@ -15,188 +16,112 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Background */}
-      <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
-        <div className="hidden md:block w-full h-full">
-          <Image
-            src="/algorism_background.jpg"
-            alt="Neural Network Background"
-            layout="fill"
-            className="object-cover z-0 opacity-80"
-            priority
-          />
-        </div>
-      </div>
+      <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 to-black" />
 
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/algorism.png"
-            alt="Algorism Logo"
-            width={75}
-            height={20}
-            className="object-contain"
-          />
+        <Link href="/" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors">
+          Jared Mills
         </Link>
         
         <nav className="flex items-center space-x-8">
-          <Link href="/our-work" className="text-white hover:font-bold transition-all">
-            Our Work
+          <Link href="#projects" className="text-white hover:text-gray-300 transition-colors">
+            Projects
           </Link>
-          <Link 
-            href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6" 
-            className="text-white hover:font-bold transition-all"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Schedule Meeting
+          <Link href="#skills" className="text-white hover:text-gray-300 transition-colors">
+            Skills
+          </Link>
+          <Link href="#contact" className="text-white hover:text-gray-300 transition-colors">
+            Contact
           </Link>
         </nav>
       </header>
 
       {/* Main content */}
       <main className="relative z-10 mt-16">
+        {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-6xl font-bold mb-6">Power Your Business with AI</h1>
+          <h1 className="text-6xl font-bold mb-6">Software Engineer</h1>
           <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            From concept to deployment, we build cutting-edge generative AI solutions that transform business productivity.
+            Building scalable applications and delivering high-quality software solutions
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <FeatureCard 
-              icon={<Brain />} 
-              title="AI-First Development" 
-              description="Custom generative AI image, video, audio, and text systems tailored to your needs" 
-            />
-            <FeatureCard 
-              icon={<Rocket />} 
-              title="Swift Deployment" 
-              description="Full-stack AI solutions ready for market in 3-4 weeks" 
-            />
-            <FeatureCard 
-              icon={<Code2 />} 
-              title="End-to-End Solution" 
-              description="From UI/UX to backend infrastructure and AI model deployment" 
-            />
-            <FeatureCard 
-              icon={<Zap />} 
-              title="Cutting-Edge Tech" 
-              description="Latest in AI/ML, including GPT-4, Claude, and open-source models" 
-            />
-            <FeatureCard 
-              icon={<Users />} 
-              title="AI Experts" 
-              description="Team of ML engineers and full-stack developers who&apos;ve built successful AI products" 
-            />
-            <FeatureCard 
-              icon={<Search />} 
-              title="Data-Driven" 
-              description="Analytics integration and A/B testing for continuous improvement" 
-            />
+          <div className="flex justify-center space-x-6">
+            <SocialLink href="https://github.com/yourusername" icon={<Github />} label="GitHub" />
+            <SocialLink href="https://linkedin.com/in/yourusername" icon={<Linkedin />} label="LinkedIn" />
+            <SocialLink href="mailto:your.email@example.com" icon={<Mail />} label="Email" />
           </div>
-
-          <Link 
-            href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6"
-            className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book a Call
-          </Link>
         </section>
 
-        {/* Process Section */}
-        <section className="max-w-4xl mx-auto px-4 pb-8 pt-16">
-          <h2 className="text-4xl font-bold mb-12 text-center">Our AI Development Process</h2>
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <ProcessStep 
-              number={1} 
-              title="Discovery & Design" 
-              description="We analyze your needs and design an AI solution architecture." 
+        {/* Skills Section */}
+        <section id="skills" className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold mb-12 text-center">Technical Skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <SkillCard 
+              icon={<Code />} 
+              title="Frontend" 
+              skills={["React", "TypeScript", "Next.js", "Tailwind CSS"]} 
             />
-            <ProcessStep 
-              number={2} 
-              title="AI Development" 
-              description="Rapid prototyping and iterative development with regular demos." 
+            <SkillCard 
+              icon={<Server />} 
+              title="Backend" 
+              skills={["Node.js", "Express", "Python", "Java"]} 
             />
-            <ProcessStep 
-              number={3} 
-              title="Deployment & Training" 
-              description="Seamless deployment and comprehensive team training." 
+            <SkillCard 
+              icon={<Database />} 
+              title="Databases" 
+              skills={["PostgreSQL", "MongoDB", "Redis", "MySQL"]} 
+            />
+            <SkillCard 
+              icon={<Terminal />} 
+              title="Tools" 
+              skills={["Git", "Docker", "AWS", "Linux"]} 
             />
           </div>
         </section>
 
-        {/* Tech We Use Section */}
-        <section className="hidden md:block max-w-4xl mx-auto px-4 pt-8 pb-12">
-          <p className="text-xl text-gray-400 mb-4 text-center">Tech We Use</p>
-          {/* Add a container with background blur */}
-          <div className="bg-black bg-opacity-50 backdrop-blur-sm rounded-xl p-8">
-            <div className="flex justify-between items-center w-full">
-              <img src="/react.png" alt="React" style={{ height: '52px' }} />
-              <img src="/segmind.png" alt="Segmind" style={{ height: '29px' }} />
-              <img src="/gcp.png" alt="GCP" style={{ height: '27px' }} />
-              <img src="/vercel.png" alt="Vercel" style={{ height: '25px' }} />
-              <img src="/openai.png" alt="OpenAI" style={{ height: '30px' }} />
-            </div>
+        {/* Projects Section */}
+        <section id="projects" className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ProjectCard 
+              title="Project 1"
+              description="A full-stack web application built with React, Node.js, and PostgreSQL"
+              tech={["React", "Node.js", "PostgreSQL"]}
+              link="https://github.com/yourusername/project1"
+            />
+            <ProjectCard 
+              title="Project 2"
+              description="Real-time data visualization dashboard using D3.js and WebSocket"
+              tech={["D3.js", "WebSocket", "Express"]}
+              link="https://github.com/yourusername/project2"
+            />
+            <ProjectCard 
+              title="Project 3"
+              description="Mobile-first e-commerce platform with payment integration"
+              tech={["Next.js", "Stripe", "MongoDB"]}
+              link="https://github.com/yourusername/project3"
+            />
+            <ProjectCard 
+              title="Project 4"
+              description="Cloud-based task management system with real-time updates"
+              tech={["React", "Firebase", "Material-UI"]}
+              link="https://github.com/yourusername/project4"
+            />
           </div>
         </section>
 
-        {/* Founder Section */}
-        <section className="max-w-4xl mx-auto px-4 py-16">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Meet Our Founder</h2>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Hi I&apos;m Stuart. With years in AI and machine learning I&apos;ve seen its transformative power firsthand. At <strong className="text-white">Algorism</strong> we help businesses like yours harness generative AI. You bring the vision we bring the expertise to make it real.
-            </p>
+        {/* Contact Section */}
+        <section id="contact" className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold mb-8 text-center">Get in Touch</h2>
+          <p className="text-center text-gray-300 mb-8">
+            I&apos;m always open to discussing new projects, opportunities, and collaborations.
+          </p>
+          <div className="flex justify-center">
             <Link 
-              href="https://x.com/stuartxmills" 
-              className="inline-flex items-center px-4 py-2 bg-black bg-opacity-50 rounded-full border border-gray-700 hover:border-[#08c0e5] transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:your.email@example.com"
+              className="inline-block px-8 py-4 bg-white text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
             >
-              <span className="text-sm font-medium">
-                Follow on 𝕏<span className="ml-2">@stuartxmills</span>
-              </span>
-            </Link>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="max-w-4xl mx-auto px-4 py-16">
-          <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <ServiceCard 
-              title="AI Consulting" 
-              price="$200" 
-              description="Strategic AI integration planning, use case identification, and implementation roadmap."
-              features={[
-                "AI readiness assessment",
-                "Custom generative AI strategy",
-                "ROI analysis",
-                "Risk mitigation planning"
-              ]}
-            />
-            <ServiceCard 
-              title="AI Development" 
-              price="$150" 
-              description="Full-stack AI solution development with state-of-the-art models and technologies."
-              features={[
-                "Image, video, or audio generative models",
-                "RAG or LLM system implementation",
-                "Full-stack integration",
-                "Deployment & monitoring"
-              ]}
-            />
-          </div>
-          <div className="text-center">
-            <Link 
-              href="https://calendar.app.google/14eTHjCTj6ZvJ1fi6"
-              className="inline-block px-8 py-4 bg-[#08c0e5] text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a Call
+              Send me an email
             </Link>
           </div>
         </section>
@@ -205,20 +130,8 @@ const HomePage: React.FC = () => {
       {/* Footer */}
       <footer className="py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-            <Image
-              src="/algorism.png"
-              alt="Algorism Logo"
-              width={60}
-              height={16}
-              className="object-contain"
-            />
-            <p className="text-white text-center md:text-left">
-              <strong>Transform your idea into an AI app in weeks</strong>
-            </p>
-          </div>
           <p className="text-center text-gray-400">
-            © 2024 Algorism. All rights reserved.
+            © {new Date().getFullYear()} Jared Mills. All rights reserved.
           </p>
         </div>
       </footer>
@@ -226,56 +139,69 @@ const HomePage: React.FC = () => {
   );
 };
 
-interface FeatureCardProps {
+interface SocialLinkProps {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}
+
+const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
+  <Link 
+    href={href}
+    className="text-white hover:text-gray-300 transition-colors"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+  >
+    <div className="text-2xl">{icon}</div>
+  </Link>
+);
+
+interface SkillCardProps {
   icon: React.ReactNode;
   title: string;
-  description: string;
+  skills: string[];
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
-  <div className="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800">
-    <div className="text-4xl mb-4 text-[#08c0e5] flex justify-center">{icon}</div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-400">{description}</p>
-  </div>
-);
-
-interface ProcessStepProps {
-  number: number;
-  title: string;
-  description: string;
-}
-
-const ProcessStep: React.FC<ProcessStepProps> = ({ number, title, description }) => (
-  <div className="text-center mb-8 md:mb-0 p-6 rounded-lg relative z-10">
-    <div className="w-16 h-16 bg-[#08c0e5] rounded-full flex items-center justify-center text-black text-xl font-bold mb-4 mx-auto">
-      {number}
-    </div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-400">{description}</p>
-  </div>
-);
-
-interface ServiceCardProps {
-  title: string;
-  price: string;
-  description: string;
-  features: string[];
-}
-
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, description, features }) => (
-  <div className="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800">
-    <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-    <p className="text-3xl font-bold text-[#08c0e5] mb-2">{price}<span className="text-lg text-gray-400">/hour</span></p>
-    <p className="text-gray-400 mb-6">{description}</p>
-    <ul className="space-y-3">
-      {features.map((feature, index) => (
-        <li key={index} className="flex items-center">
-          <Check className="w-5 h-5 text-[#08c0e5] mr-2" />
-          <span className="text-gray-300">{feature}</span>
-        </li>
+const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
+  <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg">
+    <div className="text-3xl mb-4 text-white flex justify-center">{icon}</div>
+    <h3 className="text-xl font-semibold mb-4 text-center">{title}</h3>
+    <ul className="text-gray-300">
+      {skills.map((skill, index) => (
+        <li key={index} className="mb-2 text-center">{skill}</li>
       ))}
     </ul>
+  </div>
+);
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, link }) => (
+  <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg">
+    <h3 className="text-xl font-semibold mb-3">{title}</h3>
+    <p className="text-gray-300 mb-4">{description}</p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {tech.map((item, index) => (
+        <span key={index} className="bg-gray-700 px-3 py-1 rounded-full text-sm">
+          {item}
+        </span>
+      ))}
+    </div>
+    <Link 
+      href={link}
+      className="text-white hover:text-gray-300 transition-colors flex items-center gap-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Github size={16} />
+      View on GitHub
+    </Link>
   </div>
 );
 

@@ -4,31 +4,31 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const SITE_URL = 'https://algorism.co'
-const SOCIAL_IMAGE = `${SITE_URL}/algorism_banner.png`
+const SITE_URL = 'https://jaredmills.dev'
+const SOCIAL_IMAGE = `${SITE_URL}/profile.jpg`
 
 // Long-form description for places where space permits
-const FULL_DESCRIPTION = 'Transform your business with cutting-edge AI development. Our expertise is in generative AI which includes LLM integration, RAG systems, Stable Diffusion implementation, text-to-speech (TTS), Runway video generation, chatbots and custom AI applications. We deliver fast MVP development and seamless AI solutions for enterprises and startups.'
+const FULL_DESCRIPTION = 'Software Engineer with expertise in full-stack development, building scalable applications, and delivering high-quality software solutions. Experienced in modern web technologies and best practices.'
 
 // Shorter version for social media
-const SOCIAL_DESCRIPTION = 'Expert AI development agency specializing in generative AI including Stable Diffusion, text-to-speech, video generation, and custom LLM solutions. Transform your business with state-of-the-art AI technology.'
+const SOCIAL_DESCRIPTION = 'Software Engineer specializing in full-stack development and modern web technologies. Building scalable and efficient solutions.'
 
 export const metadata: Metadata = {
-  title: 'Algorism - Generative AI Development Agency',
+  title: 'Jared Mills - Software Engineer',
   description: FULL_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   
   openGraph: {
-    title: 'Algorism - Generative AI Development Agency',
+    title: 'Jared Mills - Software Engineer',
     description: SOCIAL_DESCRIPTION,
     url: SITE_URL,
-    siteName: 'Algorism',
+    siteName: 'Jared Mills',
     images: [
       {
         url: SOCIAL_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Algorism - Expert AI Development Agency',
+        alt: 'Jared Mills - Software Engineer',
       }
     ],
     locale: 'en_US',
@@ -37,29 +37,13 @@ export const metadata: Metadata = {
   
   twitter: {
     card: 'summary_large_image',
-    title: 'Algorism - Generative AI Development Agency',
+    title: 'Jared Mills - Software Engineer',
     description: SOCIAL_DESCRIPTION,
     images: [SOCIAL_IMAGE],
-    creator: '@algorism',
   },
   
   other: {
-    'og:image': SOCIAL_IMAGE,
-    'og:image:secure_url': SOCIAL_IMAGE,
-    'og:image:type': 'image/png',
-    'og:image:width': '1200',
-    'og:image:height': '630',
-    
-    // Enhanced keywords including popular AI models and technologies
-    'keywords': 'AI development, Stable Diffusion, text-to-speech, TTS, Midjourney, video generation, Runway Gen-2, generative AI, LLM integration, RAG systems, custom chatbots, machine learning models, AI consulting, AI solutions, artificial intelligence development, AI agency, image generation, audio generation, video AI, GPT integration',
-    
-    // For LinkedIn
-    'image': SOCIAL_IMAGE,
-    'image:alt': 'Algorism - Expert AI Development Agency',
-    
-    // For Pinterest
-    'pinterest:image': SOCIAL_IMAGE,
-    'pinterest:description': SOCIAL_DESCRIPTION,
+    'keywords': 'software engineer, full-stack developer, web development, JavaScript, TypeScript, React, Node.js, software development, programming',
   },
   
   icons: {
