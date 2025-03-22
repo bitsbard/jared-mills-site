@@ -53,12 +53,12 @@ const HomePage: React.FC = () => {
         <section className="max-w-4xl mx-auto px-4 py-16 text-center">
           <h1 className="text-6xl font-bold mb-6">Software Engineer</h1>
           <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Building scalable applications and delivering high-quality software solutions
+            Building scalable and high-quality software products
           </p>
           <div className="flex justify-center space-x-6">
-            <SocialLink href="https://github.com/yourusername" icon={<Github />} label="GitHub" />
-            <SocialLink href="https://linkedin.com/in/yourusername" icon={<Linkedin />} label="LinkedIn" />
-            <SocialLink href="mailto:your.email@example.com" icon={<Mail />} label="Email" />
+            <SocialLink href="https://github.com/bitsbard" icon={<Github />} label="GitHub" />
+            <SocialLink href="https://www.linkedin.com/in/jaredxmills/" icon={<Linkedin />} label="LinkedIn" />
+            <SocialLink href="mailto:jaredxmills@gmail.com" icon={<Mail />} label="Email" />
           </div>
         </section>
 
@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
           </p>
           <div className="flex justify-center">
             <Link 
-              href="mailto:your.email@example.com"
+              href="mailto:jaredxmills@gmail.com"
               className="inline-block px-8 py-4 bg-white text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
             >
               Send me an email
