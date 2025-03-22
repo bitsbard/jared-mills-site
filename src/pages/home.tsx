@@ -94,10 +94,10 @@ const HomePage: React.FC = () => {
           <h2 className="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard 
-              title="Book Generator"
-              description="Open Source Book Generator Script - A tool for automated book content generation and formatting"
-              tech={["Python", "NLP", "Content Generation"]}
-              link="https://github.com/bitsbard/bookGenerator"
+              title="BrightlyLoop"
+              description="AI-powered platform that helps businesses create culturally relevant, accessible, and optimized user experiences for global markets through specialized chatbots and UX research tools"
+              tech={["Next.js", "RAG", "AI Routing", "Firebase", "Cloud Run", "Docker", "Firestore"]}
+              link="https://brightlyloop.com"
             />
             <ProjectCard 
               title="Weather Data Integration"
