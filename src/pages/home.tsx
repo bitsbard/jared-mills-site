@@ -157,12 +157,20 @@ const HomePage: React.FC = () => {
           <p className="text-center text-gray-300 mb-8">
             I&apos;m always open to discussing new projects, opportunities, and collaborations.
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center space-x-4">
             <Link 
               href="mailto:jaredxmills@gmail.com"
               className="inline-block px-8 py-4 bg-white text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
             >
               Send me an email
+            </Link>
+            <Link 
+              href="https://calendar.app.google/MpzzuhrSxbe2gPcG9"
+              className="inline-block px-8 py-4 bg-gray-700 text-white rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Call
             </Link>
           </div>
         </section>
