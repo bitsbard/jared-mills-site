@@ -103,13 +103,13 @@ const HomePage: React.FC = () => {
             <ProjectCard 
               title="ContextReply"
               description="AI email assistant and onboarding assistant that generates personalized, context-aware responses by analyzing business documentation"
-              tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search", "Firestore DB", "Firebase Storage"]}
+              tech={["Custom RAG", "Gmail API", "Vector DB", "Semantic Search", "TypeScript", "JavaScript", "Firestore DB", "Firebase Storage"]}
               link="https://contextreply.com"
             />
             <ProjectCard 
               title="FITPIX"
               description="AI fashion app enabling users to virtually try on and transform outfits in their personal photos using state of the art image generation"
-              tech={["Gemini API", "TypeScript", "Chatbot", "Firestore DB", "Firebase Storage", "Next.js"]}
+              tech={["Gemini API", "Chatbot", "TypeScript", "JavaScript", "Firestore DB", "Firebase Storage", "Next.js"]}
               link="https://fitpix.ai"
             />
             <ProjectCard 
