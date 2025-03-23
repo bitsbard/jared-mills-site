@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
 
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
-        <Link href="/" className="text-2xl font-bold text-gray-700 hover:opacity-80 transition-opacity">
+        <Link href="/" className="text-2xl font-bold text-gray-700">
           Jared Mills
         </Link>
 
