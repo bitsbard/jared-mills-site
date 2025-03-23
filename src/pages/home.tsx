@@ -31,10 +31,31 @@ const HomePage: React.FC = () => {
 
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
-        <Link href="/" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors">
-          Jared Mills
+        <Link href="/" className="text-2xl font-bold hover:text-gray-300 transition-colors relative group">
+          <span className="absolute inset-0 text-[#FFD700] opacity-0 group-hover:opacity-100 blur-sm transition-opacity">Jared Mills</span>
+          <span className="absolute inset-0 text-[#FF00FF] opacity-0 group-hover:opacity-100 blur-sm transition-opacity animation-delay-100">Jared Mills</span>
+          <span className="absolute inset-0 text-[#00FFFF] opacity-0 group-hover:opacity-100 blur-sm transition-opacity animation-delay-200">Jared Mills</span>
+          <span className="relative text-white">Jared Mills</span>
         </Link>
         
+        <style jsx>{`
+          @keyframes holographic {
+            0%, 100% { opacity: 0.5; transform: translateX(-2px); }
+            50% { opacity: 0.8; transform: translateX(2px); }
+          }
+          .animation-delay-100 {
+            animation: holographic 2s ease-in-out infinite;
+            animation-delay: 0.1s;
+          }
+          .animation-delay-200 {
+            animation: holographic 2s ease-in-out infinite;
+            animation-delay: 0.2s;
+          }
+          .group:hover span {
+            animation-play-state: running;
+          }
+        `}</style>
+
         <nav className="flex items-center space-x-8">
           <Link href="#projects" className="text-white hover:text-gray-300 transition-colors">
             Projects
@@ -106,7 +127,7 @@ const HomePage: React.FC = () => {
             <ProjectCard 
               title="ContextReply"
               description="AI email assistant and onboarding assistant that generates personalized, context-aware responses by analyzing business documentation"
-              tech={["Custom RAG", "Gmail API", "Vector DB", "Semantic Search", "TypeScript", "JavaScript", "Firestore DB", "Firebase Storage"]}
+              tech={["Custom RAG", "Gmail API", "Vector DB", "Semantic Search", "JavaScript", "Firestore DB", "Firebase Storage"]}
               link="https://contextreply.com"
             />
             <ProjectCard 
