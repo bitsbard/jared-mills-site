@@ -42,7 +42,10 @@ const HomePage: React.FC = () => {
           <Link href="#skills" className="text-white hover:text-gray-300 transition-colors">
             Skills
           </Link>
-          <Link href="#contact" className="text-white hover:text-gray-300 transition-colors">
+          <Link 
+            href="mailto:jaredxmills@gmail.com" 
+            className="text-white hover:text-gray-300 transition-colors"
+          >
             Contact
           </Link>
         </nav>
