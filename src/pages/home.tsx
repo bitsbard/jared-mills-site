@@ -103,7 +103,7 @@ const HomePage: React.FC = () => {
             <ProjectCard 
               title="ContextReply"
               description="AI email assistant and onboarding assistant that generates personalized, context-aware responses by analyzing business documentation"
-              tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search", "Firestore DB", "Firebase Storage", "Next.js"]}
+              tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search", "Firestore DB", "Firebase Storage"]}
               link="https://contextreply.com"
             />
             <ProjectCard 
@@ -114,8 +114,8 @@ const HomePage: React.FC = () => {
             />
             <ProjectCard 
               title="Oshorts"
-              description="[Discontinued] AI video creation platform for generating faceless viral content with custom themes and music that can be uploaded to TikTok or YouTube Shorts"
-              tech={["Image Generation", "Video Processing", "TTS", "OpenAI", "FFmpeg", "Next.js"]}
+              description="[Discontinued] AI video creation platform for generating faceless viral content with custom themes and music that can be uploaded to TikTok or YouTube"
+              tech={["Image Generation", "Video Processing", "TTS", "OpenAI", "FFmpeg", "Firestore DB", "Firebase Storage", "Next.js"]}
               link="https://www.youtube.com/watch?v=suxaPyXypnM"
             />
           </div>
