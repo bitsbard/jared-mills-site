@@ -242,8 +242,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, lin
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Github size={16} />
-      View on GitHub
+      {link.includes('github.com') ? (
+        <>
+          <Github size={16} />
+          View on GitHub
+        </>
+      ) : (
+        <>
+          <Layout size={16} />
+          Visit Website
+        </>
+      )}
     </Link>
   </div>
 );
