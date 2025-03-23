@@ -133,7 +133,7 @@ const HomePage: React.FC = () => {
             <SkillCard 
               icon={<Code />} 
               title="Frontend" 
-              skills={["React", "TypeScript", "Next.js", "Tailwind CSS"]} 
+              skills={["React", "TypeScript", "JavaScript", "Next.js"]} 
             />
             <SkillCard 
               icon={<Server />} 
@@ -143,12 +143,12 @@ const HomePage: React.FC = () => {
             <SkillCard 
               icon={<Database />} 
               title="Databases" 
-              skills={["PostgreSQL", "MongoDB", "Redis", "MySQL"]} 
+              skills={["PostgreSQL", "Firestore", "S3", "MySQL"]} 
             />
             <SkillCard 
               icon={<Terminal />} 
               title="Tools" 
-              skills={["Git", "Docker", "AWS", "Linux"]} 
+              skills={["Git", "Docker", "AWS", "GCP"]} 
             />
           </div>
         </section>
