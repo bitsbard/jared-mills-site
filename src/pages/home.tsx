@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
             <ProjectCard 
               title="BrightlyLoop"
               description="AI-powered platform that helps businesses create culturally relevant, accessible, and optimized user experiences for global markets through specialized chatbots and UX research tools"
-              tech={["Next.js", "RAG", "AI Routing", "Firebase", "Cloud Run", "Docker", "Firestore"]}
+              tech={["Next.js", "RAG", "AI Routing", "Firebase Storage", "Chatbot", "Docker", "Firestore"]}
               link="https://brightlyloop.ai"
             />
             <ProjectCard 
@@ -106,22 +106,16 @@ const HomePage: React.FC = () => {
               link="https://contextreply.com"
             />
             <ProjectCard 
-              title="Weather Data Integration"
-              description="End-to-end ETL pipeline that extracts weather data, transforms it, and loads it into a PostgreSQL database"
-              tech={["Python", "PostgreSQL", "ETL", "Data Pipeline"]}
-              link="https://github.com/bitsbard/weather-data-integration"
+              title="FITPIX"
+              description="AI-powered fashion app that lets users virtually try on and transform outfits in their photos"
+              tech={["Next.js", "Gemini API", "TypeScript", "Chatbot", "Firestore", "Firebase Storage"]}
+              link="https://fitpix.ai"
             />
             <ProjectCard 
-              title="Stock Price Predictor GAN"
-              description="A stock price prediction model using technical indicators, ARIMA, LSTM, and GAN"
-              tech={["Python", "LSTM", "GAN", "ARIMA"]}
-              link="https://github.com/bitsbard/stock-price-predictor-gan"
-            />
-            <ProjectCard 
-              title="Realtime Social Data Pipeline"
-              description="Production-grade pipeline for ingesting, processing, and analyzing social media data in real-time"
-              tech={["Python", "Real-time Processing", "Data Analytics"]}
-              link="https://github.com/bitsbard/realtime-social-data-pipeline"
+              title="Oshorts"
+              description="AI-powered platform for creating faceless viral videos with customizable content types, background music, and popular topics"
+              tech={["Next.js", "OpenAI", "FFmpeg", "Image Generation", "Video Processing", "TTS"]}
+              link="https://www.youtube.com/watch?v=suxaPyXypnM"
             />
           </div>
         </section>
