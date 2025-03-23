@@ -19,3 +19,44 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.holographic-text {
+  position: relative;
+  display: inline-block;
+}
+
+.holographic-text::before,
+.holographic-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  filter: blur(4px);
+}
+
+.holographic-text::before {
+  color: #FFD700;
+  transform: translateX(-2px);
+}
+
+.holographic-text::after {
+  color: #00FFFF;
+  transform: translateX(2px);
+}
+
+.holographic-text:hover::before,
+.holographic-text:hover::after {
+  opacity: 0.5;
+}
+
+.holographic-text span {
+  position: relative;
+  z-index: 1;
+}
+
+.holographic-text:hover span {
+  color: #FF00FF;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
