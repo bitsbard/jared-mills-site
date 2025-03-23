@@ -96,26 +96,26 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard 
               title="BrightlyLoop"
-              description="AI platform for creating culturally relevant user experiences through specialized chatbots and UX research tools"
-              tech={["Next.js", "RAG", "AI Routing", "Chatbot", "Docker", "Firestore"]}
+              description="AI platform for creating culturally relevant user experiences through specialized chatbots grounded by experts and UX research tools"
+              tech={["AI Routing", "Chatbot", "RAG", "Docker", "Firestore DB", "Firebase Storage", "Next.js"]}
               link="https://brightlyloop.ai"
             />
             <ProjectCard 
               title="ContextReply"
-              description="AI email assistant that generates personalized, context-aware responses by analyzing business communication patterns"
-              tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search"]}
+              description="AI email assistant and onboarding assistant that generates personalized, context-aware responses by analyzing business documentation"
+              tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search", "Firestore DB", "Firebase Storage", "Next.js"]}
               link="https://contextreply.com"
             />
             <ProjectCard 
               title="FITPIX"
-              description="AI fashion app enabling users to virtually try on and transform outfits in their personal photos"
-              tech={["Next.js", "Gemini API", "TypeScript", "Chatbot", "Firestore", "Firebase"]}
+              description="AI fashion app enabling users to virtually try on and transform outfits in their personal photos using state of the art image generation"
+              tech={["Gemini API", "TypeScript", "Chatbot", "Firestore DB", "Firebase Storage", "Next.js"]}
               link="https://fitpix.ai"
             />
             <ProjectCard 
               title="Oshorts"
-              description="[Discontinued] AI video creation platform for generating faceless viral content with custom themes and music"
-              tech={["Next.js", "OpenAI", "FFmpeg", "Image Gen", "Video Processing", "TTS"]}
+              description="[Discontinued] AI video creation platform for generating faceless viral content with custom themes and music that can be uploaded to TikTok or YouTube Shorts"
+              tech={["Image Generation", "Video Processing", "TTS", "OpenAI", "FFmpeg", "Next.js"]}
               link="https://www.youtube.com/watch?v=suxaPyXypnM"
             />
           </div>
