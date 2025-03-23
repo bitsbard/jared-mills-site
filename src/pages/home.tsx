@@ -127,7 +127,7 @@ const HomePage: React.FC = () => {
             <ProjectCard 
               title="ContextReply"
               description="AI email assistant and onboarding assistant that generates personalized, context-aware responses by analyzing business documentation"
-              tech={["Custom RAG", "Gmail API", "Vector DB", "Semantic Search", "JavaScript", "Firestore DB", "Firebase Storage"]}
+              tech={["Custom RAG", "Gmail API", "Vector DB", "Semantic Search", "TypeScript", "Firestore DB", "Firebase Storage"]}
               link="https://contextreply.com"
             />
             <ProjectCard 
