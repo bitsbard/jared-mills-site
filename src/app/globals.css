@@ -20,43 +20,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@keyframes flow {
+  0%, 100% { transform: translateX(-2px); opacity: 0.7; }
+  50% { transform: translateX(2px); opacity: 0.5; }
+}
+
 .holographic-text {
   position: relative;
   display: inline-block;
 }
 
-.holographic-text::before,
-.holographic-text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.3s;
-  filter: blur(4px);
-}
-
-.holographic-text::before {
-  color: #FFD700;
-  transform: translateX(-2px);
-}
-
-.holographic-text::after {
-  color: #00FFFF;
-  transform: translateX(2px);
-}
-
-.holographic-text:hover::before,
-.holographic-text:hover::after {
-  opacity: 0.5;
-}
-
 .holographic-text span {
-  position: relative;
-  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    #FFD700 0%,
+    #FF00FF 50%,
+    #00FFFF 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: flow 3s ease-in-out infinite;
 }
 
 .holographic-text:hover span {
-  color: #FF00FF;
-  text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+  background: linear-gradient(
+    90deg,
+    #FFE44D 0%,
+    #FF4DFF 50%,
+    #4DFFFF 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
