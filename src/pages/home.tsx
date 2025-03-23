@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-6xl font-bold mb-6">Software Engineer</h1>
               <p className="text-2xl text-gray-300 mb-6 max-w-3xl">
-                Building scalable and high-quality software products
+                Building scalable and reliable software products
               </p>
               <div className="space-y-4 mb-8 text-gray-300">
                 <p className="text-lg">
