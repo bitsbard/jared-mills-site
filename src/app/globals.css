@@ -26,10 +26,10 @@ body {
 }
 
 .holographic-text {
-  color: #FFD700;
+  color: #374151;
   transition: color 0.3s ease;
 }
 
 .holographic-text:hover {
-  color: #FFE44D;
+  opacity: 0.8;
 }
