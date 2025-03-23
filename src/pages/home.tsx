@@ -31,8 +31,8 @@ const HomePage: React.FC = () => {
 
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
-        <Link href="/" className="text-2xl font-bold text-white holographic-text">
-          <span data-text="Jared Mills">Jared Mills</span>
+        <Link href="/" className="text-2xl font-bold holographic-text">
+          Jared Mills
         </Link>
 
         <nav className="flex items-center space-x-8">

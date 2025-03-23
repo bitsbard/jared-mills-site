@@ -26,31 +26,10 @@ body {
 }
 
 .holographic-text {
-  position: relative;
-  display: inline-block;
+  color: #FFD700;
+  transition: color 0.3s ease;
 }
 
-.holographic-text span {
-  background: linear-gradient(
-    90deg,
-    #FFD700 0%,
-    #FF00FF 50%,
-    #00FFFF 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: flow 3s ease-in-out infinite;
-}
-
-.holographic-text:hover span {
-  background: linear-gradient(
-    90deg,
-    #FFE44D 0%,
-    #FF4DFF 50%,
-    #4DFFFF 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.holographic-text:hover {
+  color: #FFE44D;
 }
