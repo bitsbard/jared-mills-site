@@ -6,6 +6,7 @@ import {
   Linkedin,
   Mail,
   Terminal,
+  ArrowRight,
   Layout,
   Database,
   Server
@@ -95,26 +96,26 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard 
               title="BrightlyLoop"
-              description="AI-powered platform that helps businesses create culturally relevant, accessible, and optimized user experiences for global markets through specialized chatbots and UX research tools"
+              description="AI platform for creating culturally relevant user experiences through specialized chatbots and UX research tools"
               tech={["Next.js", "RAG", "AI Routing", "Chatbot", "Docker", "Firestore"]}
               link="https://brightlyloop.ai"
             />
             <ProjectCard 
               title="ContextReply"
-              description="AI-powered email response system that generates personalized, context-aware email replies by integrating with Gmail's API and leveraging users' business data to maintain communication consistency"
+              description="AI email assistant that generates personalized, context-aware responses by analyzing business communication patterns"
               tech={["Custom RAG", "Gmail API", "TypeScript", "Vector DB", "Semantic Search"]}
               link="https://contextreply.com"
             />
             <ProjectCard 
               title="FITPIX"
-              description="AI-powered fashion app that lets users virtually try on and transform outfits in their photos"
-              tech={["Next.js", "Gemini API", "TypeScript", "Chatbot", "Firestore", "Firebase Storage"]}
+              description="AI fashion app enabling users to virtually try on and transform outfits in their personal photos"
+              tech={["Next.js", "Gemini API", "TypeScript", "Chatbot", "Firestore", "Firebase"]}
               link="https://fitpix.ai"
             />
             <ProjectCard 
               title="Oshorts"
-              description="[Discontinued] AI-powered platform for creating faceless viral videos with customizable content types, background music, and popular topics"
-              tech={["Next.js", "OpenAI", "FFmpeg", "Image Generation", "Video Processing", "TTS"]}
+              description="[Discontinued] AI video creation platform for generating faceless viral content with custom themes and music"
+              tech={["Next.js", "OpenAI", "FFmpeg", "Image Gen", "Video Processing", "TTS"]}
               link="https://www.youtube.com/watch?v=suxaPyXypnM"
             />
           </div>
@@ -220,12 +221,12 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, link }) => (
-  <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg h-[320px] flex flex-col">
+  <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg h-[300px] flex flex-col">
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
-    <p className="text-gray-300 mb-4 h-[80px] line-clamp-3">{description}</p>
-    <div className="flex flex-wrap gap-2 mb-4 flex-1">
+    <p className="text-gray-300 mb-4 h-[60px] overflow-hidden text-sm">{description}</p>
+    <div className="flex flex-wrap gap-2 mb-4">
       {tech.map((item, index) => (
-        <span key={index} className="bg-gray-700 px-3 py-1 rounded-full text-sm">
+        <span key={index} className="bg-gray-700 px-2 py-1 rounded-full text-xs text-gray-200">
           {item}
         </span>
       ))}
@@ -243,12 +244,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, lin
         </>
       ) : link.includes('youtube.com') ? (
         <>
-          <Layout size={16} />
+          <ArrowRight size={16} />
           Watch Demo
         </>
       ) : (
         <>
-          <Layout size={16} />
+          <ArrowRight size={16} />
           Visit Website
         </>
       )}
