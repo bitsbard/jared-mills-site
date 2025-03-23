@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
             <ProjectCard 
               title="BrightlyLoop"
               description="AI-powered platform that helps businesses create culturally relevant, accessible, and optimized user experiences for global markets through specialized chatbots and UX research tools"
-              tech={["Next.js", "RAG", "AI Routing", "Firebase Storage", "Chatbot", "Docker", "Firestore"]}
+              tech={["Next.js", "RAG", "AI Routing", "Chatbot", "Docker", "Firestore"]}
               link="https://brightlyloop.ai"
             />
             <ProjectCard 
@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
             />
             <ProjectCard 
               title="Oshorts"
-              description="AI-powered platform for creating faceless viral videos with customizable content types, background music, and popular topics"
+              description="[Discontinued] AI-powered platform for creating faceless viral videos with customizable content types, background music, and popular topics"
               tech={["Next.js", "OpenAI", "FFmpeg", "Image Generation", "Video Processing", "TTS"]}
               link="https://www.youtube.com/watch?v=suxaPyXypnM"
             />
@@ -220,10 +220,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, link }) => (
-  <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg">
+  <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg h-[320px] flex flex-col">
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
-    <p className="text-gray-300 mb-4">{description}</p>
-    <div className="flex flex-wrap gap-2 mb-4">
+    <p className="text-gray-300 mb-4 h-[80px] line-clamp-3">{description}</p>
+    <div className="flex flex-wrap gap-2 mb-4 flex-1">
       {tech.map((item, index) => (
         <span key={index} className="bg-gray-700 px-3 py-1 rounded-full text-sm">
           {item}
@@ -232,7 +232,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, lin
     </div>
     <Link 
       href={link}
-      className="text-white hover:text-gray-300 transition-colors flex items-center gap-2"
+      className="text-white hover:text-gray-300 transition-colors flex items-center gap-2 mt-auto"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -240,6 +240,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, lin
         <>
           <Github size={16} />
           View on GitHub
+        </>
+      ) : link.includes('youtube.com') ? (
+        <>
+          <Layout size={16} />
+          Watch Demo
         </>
       ) : (
         <>
