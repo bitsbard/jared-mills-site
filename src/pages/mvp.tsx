@@ -1,9 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const MVPPage: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
+      {/* Background */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
+        <div className="hidden md:block w-full h-full">
+          <Image
+            src="/algorism_background.jpg"
+            alt="Neural Network Background"
+            layout="fill"
+            className="object-cover z-0 opacity-80"
+            priority
+          />
+        </div>
+      </div>
+
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
         <Link href="/" className="text-2xl font-bold text-white bg-gray-700 px-3 py-1 rounded-full">
