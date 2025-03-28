@@ -136,7 +136,7 @@ const HomePage: React.FC = () => {
             <SkillCard 
               icon={<Server />} 
               title="Backend" 
-              skills={["Node.js", "Express", "Python", "Java", "ELT/ETL Pipelines", "Data Modeling"]} 
+              skills={["Node.js", "Express", "Python", "Java", "ELT/ETL Pipelines", "Data Modeling", "AI/ML"]} 
             />
             <SkillCard 
               icon={<Database />} 
