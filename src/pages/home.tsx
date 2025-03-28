@@ -151,13 +151,10 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* MVP Offer Section */}
-        <section className="max-w-4xl mx-auto px-4 py-8 text-center">
-          <p className="text-gray-300">
-            Need an MVP built in 4 weeks? Check out my{' '}
-            <Link href="https://algorism.vercel.app/" className="underline hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-              startup development service
-            </Link>
+        {/* MVP Section */}
+        <section className="max-w-4xl mx-auto px-4 py-8">
+          <p className="text-center text-gray-300">
+            Want to build an MVP? <Link href="/mvp" className="underline hover:text-white transition-colors">Learn about my 4-week MVP development service</Link>
           </p>
         </section>
 
