@@ -151,11 +151,38 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
+        {/* MVP Development Section */}
+        <section className="max-w-4xl mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold mb-8 text-center">Build Your MVP</h2>
+          <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg text-center">
+            <p className="text-xl text-gray-300 mb-6">
+              Turn your startup idea into a fully functional SaaS web app in 4 weeks.
+              Complete MVP development for a flat fee of $17,500.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <div className="bg-gray-700 px-4 py-2 rounded-lg">
+                <span className="text-lg">4-Week Delivery</span>
+              </div>
+              <div className="bg-gray-700 px-4 py-2 rounded-lg">
+                <span className="text-lg">End-to-End Development</span>
+              </div>
+              <div className="bg-gray-700 px-4 py-2 rounded-lg">
+                <span className="text-lg">Weekly Updates</span>
+              </div>
+            </div>
+            <Link 
+              href="https://calendar.app.google/MpzzuhrSxbe2gPcG9"
+              className="inline-block px-8 py-4 bg-white text-black rounded-md transition-transform duration-300 hover:-translate-y-1 text-lg font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Free Consultation
+            </Link>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="max-w-4xl mx-auto px-4 py-16">
-          <p className="text-center text-gray-300 mb-16">
-            Need an MVP built fast? <Link href="/mvp" className="underline hover:text-white transition-colors">Let&apos;s build your startup idea in 4 weeks</Link>
-          </p>
           <h2 className="text-4xl font-bold mb-8 text-center">Get in Touch</h2>
           <p className="text-center text-gray-300 mb-8">
             I&apos;m always open to discussing new projects, opportunities, and collaborations.
