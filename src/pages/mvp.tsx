@@ -19,8 +19,8 @@ const MVPPage: React.FC = () => {
           
           <div className="text-gray-300 space-y-6">
             <p className="text-xl leading-relaxed">
-              Hi, I'm Jared, a startup founder and honors Computer Science graduate from Oregon State University 
-              with real-world experience in building full-scale software products. I'm now offering a specialized 
+              Hi, I&apos;m Jared, a startup founder and honors Computer Science graduate from Oregon State University 
+              with real-world experience in building full-scale software products. I&apos;m now offering a specialized 
               MVP (Minimum Viable Product) development service designed to take your startup idea from concept 
               to a fully functional SaaS web app in just 4 weeks for a flat fee of $17,500.
             </p>
