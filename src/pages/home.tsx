@@ -154,7 +154,7 @@ const HomePage: React.FC = () => {
         {/* MVP Section */}
         <section className="max-w-4xl mx-auto px-4 py-8 text-center">
           <p className="text-gray-300 text-lg">
-            Need an MVP built fast? <Link href="/mvp" className="underline hover:text-white transition-colors">Let's build your startup idea in 4 weeks</Link>
+            Need an MVP built fast? <Link href="/mvp" className="underline hover:text-white transition-colors">Let&apos;s build your startup idea in 4 weeks</Link>
           </p>
         </section>
 
