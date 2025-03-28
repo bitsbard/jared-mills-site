@@ -6,31 +6,31 @@ const MVPPage: React.FC = () => {
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Background */}
-      <div className="fixed top-0 left-0 w-full h-full bg-black md:bg-transparent">
-        <div className="hidden md:block w-full h-full">
+      <div className="fixed top-0 left-0 w-full h-full bg-black">
+        <div className="w-full h-full">
           <Image
             src="/algorism_background.jpg"
             alt="Neural Network Background"
             layout="fill"
-            className="object-cover z-0 opacity-80"
+            className="object-cover opacity-40"
             priority
           />
         </div>
       </div>
 
       {/* Header */}
-      <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
+      <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-20">
         <Link href="/" className="text-2xl font-bold text-white bg-gray-700 px-3 py-1 rounded-full">
           Jared Mills
         </Link>
       </header>
 
       {/* Main content */}
-      <main className="relative z-10 mt-16">
+      <main className="relative z-20 mt-16">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-bold mb-8 text-center">MVP Software Development Service</h1>
           
-          <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg">
+          <div className="bg-gray-800/70 backdrop-blur-sm p-8 rounded-lg">
             <p className="text-lg mb-8">
               Hi, I&apos;m Jared, a startup founder and honors Computer Science graduate from Oregon State University with real-world experience in building full-scale software products. I&apos;m now offering a specialized MVP (Minimum Viable Product) development service designed to take your startup idea from concept to a fully functional SaaS web app in just 4 weeks for a flat fee of $17,500.
             </p>
