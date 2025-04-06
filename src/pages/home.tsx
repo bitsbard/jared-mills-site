@@ -19,8 +19,8 @@ const HomePage: React.FC = () => {
       {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full bg-black">
         <div className="w-full h-full md:block relative">
-          {/* Mobile background (at top with black bars below) */}
-          <div className="md:hidden w-full absolute top-0">
+          {/* Mobile background (positioned at bottom) */}
+          <div className="md:hidden w-full absolute bottom-0">
             <Image
               src="/algorism_background.jpg"
               alt="Neural Network Background"
