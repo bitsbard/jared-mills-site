@@ -18,14 +18,29 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full bg-black">
-        <div className="relative w-full h-[100vw]">
-          <Image
-            src="/algorism_background.jpg"
-            alt="Neural Network Background"
-            layout="fill"
-            className="object-contain opacity-80"
-            priority
-          />
+        <div className="w-full h-full md:block relative">
+          {/* Mobile background (centered horizontally with black bars) */}
+          <div className="md:hidden w-full absolute top-1/2 -translate-y-1/2">
+            <Image
+              src="/algorism_background.jpg"
+              alt="Neural Network Background"
+              width={1920}
+              height={1080}
+              className="w-full opacity-80"
+              priority
+            />
+          </div>
+          
+          {/* Desktop background (full cover) */}
+          <div className="hidden md:block w-full h-full">
+            <Image
+              src="/algorism_background.jpg"
+              alt="Neural Network Background"
+              layout="fill"
+              className="object-cover z-0 opacity-80"
+              priority
+            />
+          </div>
         </div>
       </div>
 
