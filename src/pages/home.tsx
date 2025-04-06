@@ -18,15 +18,13 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen text-white overflow-x-hidden">
       {/* Background */}
       <div className="fixed top-0 left-0 w-full h-full bg-black">
-        <div className="w-full h-full">
+        <div className="relative w-full h-[100vw]">
           <Image
             src="/algorism_background.jpg"
             alt="Neural Network Background"
             layout="fill"
-            className="object-cover z-0 opacity-80"
+            className="object-contain opacity-80"
             priority
-            quality={100}
-            sizes="100vw"
           />
         </div>
       </div>
