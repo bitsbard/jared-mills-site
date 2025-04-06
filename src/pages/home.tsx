@@ -25,6 +25,8 @@ const HomePage: React.FC = () => {
             layout="fill"
             className="object-cover z-0 opacity-80"
             priority
+            quality={100}
+            sizes="100vw"
           />
         </div>
       </div>
