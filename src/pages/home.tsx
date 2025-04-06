@@ -31,11 +31,11 @@ const HomePage: React.FC = () => {
 
       {/* Header */}
       <header className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between relative z-10">
-        <Link href="/" className="text-2xl font-bold text-white bg-gray-700 px-3 py-1 rounded-full">
+        <Link href="/" className="text-xl md:text-2xl font-bold text-white bg-gray-700 px-2 md:px-3 py-1 rounded-full">
           Jared Mills
         </Link>
 
-        <nav className="flex items-center space-x-8">
+        <nav className="flex items-center space-x-4 md:space-x-8">
           <Link href="#projects" className="text-white hover:text-gray-300 transition-colors">
             Projects
           </Link>
