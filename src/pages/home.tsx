@@ -131,10 +131,10 @@ const HomePage: React.FC = () => {
               link="https://fitpix.ai"
             />
             <ProjectCard 
-              title="Oshorts"
-              description="[Discontinued] AI video creation platform for generating faceless viral content with custom themes and music that can be uploaded to TikTok or YouTube"
-              tech={["Image Generation", "Video Processing", "TTS", "OpenAI", "FFmpeg", "Firestore DB", "Firebase Storage", "Next.js"]}
-              link="https://www.youtube.com/watch?v=suxaPyXypnM"
+              title="Lovelinkus"
+              description="Service that uses AI and personality science to deliver 10 highly compatible matches, eliminating endless swiping for meaningful romantic connections"
+              tech={["LLM", "React", "TypeScript", "Data Analysis", "Data Engineering", "Supabase", "PostgreSQL", "Next.js"]}
+              link="https://www.lovelinkus.com/"
             />
           </div>
         </section>
